@@ -832,10 +832,14 @@
 #define X_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
 #define Y_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define Z_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
 =======
 #define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.           // DIGA-Tech: set to false due to usage of probe
 >>>>>>> 909cb1acab... Marlin 2.0.9.1
+=======
+#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.           // DIGA-Tech: set to false due to usage of probe
+>>>>>>> 700a6ab7a3... Marlin 2.0.9.1
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -1044,10 +1048,14 @@
 
 // Force the use of the probe for Z-axis homing
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
 =======
 #define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled due to usage of probe on Z max endstop
 >>>>>>> 909cb1acab... Marlin 2.0.9.1
+=======
+#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled due to usage of probe on Z max endstop
+>>>>>>> 700a6ab7a3... Marlin 2.0.9.1
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1195,6 +1203,7 @@
  */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }              // DIGA-Tech: probe offset
 =======
 #define NOZZLE_TO_PROBE_OFFSET { 33, -33, 0 }              // DIGA-Tech: probe offset
@@ -1202,6 +1211,9 @@
 =======
 #define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }              // DIGA-Tech: probe offset
 >>>>>>> a2d08a422e... update
+=======
+#define NOZZLE_TO_PROBE_OFFSET { 33, -33, 0 }              // DIGA-Tech: probe offset
+>>>>>>> 700a6ab7a3... Marlin 2.0.9.1
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1347,7 +1359,10 @@
 #define INVERT_X_DIR false                                 // DIGA-Tech:
 =======
 #define INVERT_X_DIR false
+<<<<<<< HEAD
 >>>>>>> 909cb1acab... Marlin 2.0.9.1
+=======
+>>>>>>> 700a6ab7a3... Marlin 2.0.9.1
 #define INVERT_Y_DIR false                                 // DIGA-Tech:
 #define INVERT_Z_DIR true                                  // DIGA-Tech:
 //#define INVERT_I_DIR false
@@ -1767,12 +1782,17 @@
 
 #if ENABLED(Z_SAFE_HOMING)
 <<<<<<< HEAD
+<<<<<<< HEAD
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing    // DIGA-Tech:
   #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing    // DIGA-Tech:
 =======
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing              // DIGA-Tech:
   #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing              // DIGA-Tech:
 >>>>>>> 909cb1acab... Marlin 2.0.9.1
+=======
+  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing              // DIGA-Tech:
+  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing              // DIGA-Tech:
+>>>>>>> 700a6ab7a3... Marlin 2.0.9.1
 #endif
 
 // Homing speeds (mm/min)
