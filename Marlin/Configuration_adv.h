@@ -1276,7 +1276,7 @@
   //#define LCD_DECIMAL_SMALL_XY
 
   // Add an 'M73' G-code to set the current percentage
-  #define LCD_SET_PROGRESS_MANUALLY                        // DIGA-Tech:
+  //#define LCD_SET_PROGRESS_MANUALLY
 
   // Show the E position (filament used) during printing
   //#define LCD_SHOW_E_TOTAL
@@ -1880,7 +1880,7 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-#define LIN_ADVANCE                                        // DIGA-Tech:
+#define LIN_ADVANCE                                                                      // DIGA-Tech:
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
   #define LIN_ADVANCE_K 0.13    // Unit: mm compression per 1mm/s extruder speed         // DIGA-Tech:
@@ -3559,7 +3559,7 @@
 /**
  * Auto-report temperatures with M155 S<seconds>
  */
-#define AUTO_REPORT_TEMPERATURES                           // DIGA-Tech:
+#define AUTO_REPORT_TEMPERATURES
 
 /**
  * Auto-report position with M154 S<seconds>
@@ -3569,7 +3569,7 @@
 /**
  * Include capabilities in M115 output
  */
-#define EXTENDED_CAPABILITIES_REPORT                       // DIGA-Tech:
+#define EXTENDED_CAPABILITIES_REPORT
 #if ENABLED(EXTENDED_CAPABILITIES_REPORT)
   #define M115_GEOMETRY_REPORT                             // DIGA-Tech:
 #endif
