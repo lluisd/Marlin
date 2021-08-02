@@ -102,7 +102,7 @@
  *
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#define SERIAL_PORT 0                                      // DIGA-Tech:
+#define SERIAL_PORT 0
 
 /**
  * Serial Port Baud Rate
@@ -115,12 +115,8 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 250000                                    // DIGA-Tech:
-<<<<<<< HEAD
-#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate         // DIGA-Tech:
-=======
+#define BAUDRATE 250000
 //#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
->>>>>>> 89a18eb428 (update)
 
 /**
  * Select a secondary serial port on the board to use for communication with the host.
@@ -512,7 +508,7 @@
 
 #define TEMP_RESIDENCY_TIME         10  // (seconds) Time to wait for hotend to "settle" in M109
 #define TEMP_WINDOW                  1  // (°C) Temperature proximity for the "temperature reached" timer
-#define TEMP_HYSTERESIS              5  // (°C) Temperature proximity considered "close enough" to the target          // DIGA-Tech:
+#define TEMP_HYSTERESIS              3  // (°C) Temperature proximity considered "close enough" to the target
 
 #define TEMP_BED_RESIDENCY_TIME     10  // (seconds) Time to wait for bed to "settle" in M190
 #define TEMP_BED_WINDOW              1  // (°C) Temperature proximity for the "temperature reached" timer
@@ -605,14 +601,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    // Artillery Sidewinder X1                             // DIGA-Tech:
-    #define DEFAULT_Kp 14.58                               // DIGA-Tech:
-    #define DEFAULT_Ki  1.14                               // DIGA-Tech:
-    #define DEFAULT_Kd 46.57                               // DIGA-Tech:
-
-    //#define DEFAULT_Kp  22.20                            // DIGA-Tech:
-    //#define DEFAULT_Ki   1.08                            // DIGA-Tech:
-    //#define DEFAULT_Kd 114.00                            // DIGA-Tech:
+    #define DEFAULT_Kp  22.20
+    #define DEFAULT_Ki   1.08
+    #define DEFAULT_Kd 114.00
   #endif
 #endif // PIDTEMP
 
@@ -649,16 +640,11 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-  // Artillery Sidewinder X1                               // DIGA-Tech:
-  #define DEFAULT_bedKp 244.21                             // DIGA-Tech:
-  #define DEFAULT_bedKi  45.87                             // DIGA-Tech:
-  #define DEFAULT_bedKd 325.08                             // DIGA-Tech:
-
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  //#define DEFAULT_bedKp 10.00                            // DIGA-Tech:
-  //#define DEFAULT_bedKi .023                             // DIGA-Tech:
-  //#define DEFAULT_bedKd 305.4                            // DIGA-Tech:
+  #define DEFAULT_bedKp 10.00
+  #define DEFAULT_bedKi .023
+  #define DEFAULT_bedKd 305.4
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -835,21 +821,13 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
 #define Y_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define Z_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
-=======
 #define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.           // DIGA-Tech: set to false due to usage of probe
->>>>>>> 5ed54ea1df (Marlin 2.0.9.1)
-=======
-#define Z_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
->>>>>>> 89a18eb428 (update)
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.           // DIGA-Tech: set to false due to usage of probe
+#define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define I_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -909,7 +887,7 @@
  *
  * :[2,3,4,5,6,7]
  */
-#define ENDSTOP_NOISE_THRESHOLD 2                          // DIGA-Tech:
+//#define ENDSTOP_NOISE_THRESHOLD 2
 
 // Check for stuck or disconnected endstops during homing moves.
 //#define DETECT_BROKEN_ENDSTOP
@@ -1005,11 +983,7 @@
   #endif
 #endif
 
-<<<<<<< HEAD
-#define DEFAULT_EJERK   10.0  // May be used by Linear Advance       // DIGA-Tech:
-=======
-#define DEFAULT_EJERK    10.0  // May be used by Linear Advance      // DIGA-Tech:
->>>>>>> 89a18eb428 (update)
+#define DEFAULT_EJERK    5.0  // May be used by Linear Advance
 
 /**
  * Junction Deviation Factor
@@ -1032,15 +1006,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-//#define S_CURVE_ACCELERATION                             // DIGA-Tech:
-=======
-//#define S_CURVE_ACCELERATION                               // DIGA-Tech:
->>>>>>> d40a677736 (update)
-=======
-//#define S_CURVE_ACCELERATION                             // DIGA-Tech:
->>>>>>> 89a18eb428 (update)
+//#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1059,15 +1025,7 @@
 //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN               // DIGA-Tech: disabled due to usage of probe on Z max endstop
 
 // Force the use of the probe for Z-axis homing
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
-=======
 #define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled due to usage of probe on Z max endstop
->>>>>>> 5ed54ea1df (Marlin 2.0.9.1)
-=======
-#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
->>>>>>> 89a18eb428 (update)
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1155,7 +1113,7 @@
 #endif
 
 // Duet Smart Effector (for delta printers) - https://bit.ly/2ul5U7J
-// When the pin is defined you can use M672 to set/reset the probe sensitivity.
+// When the pin is defined you can use M672 to set/reset the probe sensivity.
 //#define DUET_SMART_EFFECTOR
 #if ENABLED(DUET_SMART_EFFECTOR)
   #define SMART_EFFECTOR_MOD_PIN  -1  // Connect a GPIO pin to the Smart Effector MOD pin
@@ -1213,29 +1171,17 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }              // DIGA-Tech: probe offset
-=======
 #define NOZZLE_TO_PROBE_OFFSET { 33, -33, 0 }              // DIGA-Tech: probe offset
->>>>>>> 5ed54ea1df (Marlin 2.0.9.1)
-=======
-#define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }              // DIGA-Tech: probe offset
->>>>>>> 68848e6c2e (update)
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #define PROBING_MARGIN 10                                  // DIGA-Tech: probe margin
 
 // X and Y axis travel speed (mm/min) between probes
-<<<<<<< HEAD
-#define XY_PROBE_FEEDRATE (133*60)                         // DIGA-Tech:
-=======
-#define XY_PROBE_FEEDRATE (50*60)                          // DIGA-Tech:
->>>>>>> 89a18eb428 (update)
+#define XY_PROBE_FEEDRATE (133*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_FEEDRATE_FAST (4*60)                       // DIGA-Tech:
+#define Z_PROBE_FEEDRATE_FAST (4*60)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2)
@@ -1367,15 +1313,7 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define INVERT_X_DIR false                                 // DIGA-Tech:
-=======
 #define INVERT_X_DIR false
->>>>>>> 5ed54ea1df (Marlin 2.0.9.1)
-=======
-#define INVERT_X_DIR false                                 // DIGA-Tech:
->>>>>>> 89a18eb428 (update)
 #define INVERT_Y_DIR false                                 // DIGA-Tech:
 #define INVERT_Z_DIR true                                  // DIGA-Tech:
 //#define INVERT_I_DIR false
@@ -1385,7 +1323,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR false                                // DIGA-Tech:
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -1427,8 +1365,8 @@
 #define Y_BED_SIZE 305                                     // DIGA-Tech:
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -3                                       // DIGA-Tech:
-#define Y_MIN_POS -3                                       // DIGA-Tech:
+#define X_MIN_POS 0
+#define Y_MIN_POS 0
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
@@ -1794,30 +1732,12 @@
 #define Z_SAFE_HOMING                                      // DIGA-Tech:
 
 #if ENABLED(Z_SAFE_HOMING)
-<<<<<<< HEAD
-<<<<<<< HEAD
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing    // DIGA-Tech:
-  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing    // DIGA-Tech:
-=======
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing              // DIGA-Tech:
   #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing              // DIGA-Tech:
->>>>>>> 5ed54ea1df (Marlin 2.0.9.1)
 #endif
 
 // Homing speeds (mm/min)
-<<<<<<< HEAD
-#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }            // DIGA-Tech:
-=======
-#define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (20*60) }                     // DIGA-Tech:
->>>>>>> d40a677736 (update)
-=======
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing    // DIGA-Tech:
-  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing    // DIGA-Tech:
-#endif
-
-// Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }            // DIGA-Tech:
->>>>>>> 89a18eb428 (update)
+#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
@@ -2619,33 +2539,11 @@
 // DGUS Touch Display with DWIN OS. (Choose one.)
 // ORIGIN : https://www.aliexpress.com/item/32993409517.html
 // FYSETC : https://www.aliexpress.com/item/32961471929.html
-// MKS    : https://www.aliexpress.com/item/1005002008179262.html
-//
-// Flash display with DGUS Displays for Marlin:
-//  - Format the SD card to FAT32 with an allocation size of 4kb.
-//  - Download files as specified for your type of display.
-//  - Plug the microSD card into the back of the display.
-//  - Boot the display and wait for the update to complete.
-//
-// ORIGIN (Marlin DWIN_SET)
-//  - Download https://github.com/coldtobi/Marlin_DGUS_Resources
-//  - Copy the downloaded DWIN_SET folder to the SD card.
-//
-// FYSETC (Supplier default)
-//  - Download https://github.com/FYSETC/FYSTLCD-2.0
-//  - Copy the downloaded SCREEN folder to the SD card.
-//
-// HIPRECY (Supplier default)
-//  - Download https://github.com/HiPrecy/Touch-Lcd-LEO
-//  - Copy the downloaded DWIN_SET folder to the SD card.
-//
-// MKS (MKS-H43) (Supplier default)
-//  - Download https://github.com/makerbase-mks/MKS-H43
-//  - Copy the downloaded DWIN_SET folder to the SD card.
 //
 //#define DGUS_LCD_UI_ORIGIN
 //#define DGUS_LCD_UI_FYSETC
 //#define DGUS_LCD_UI_HIPRECY
+
 //#define DGUS_LCD_UI_MKS
 #if ENABLED(DGUS_LCD_UI_MKS)
   #define USE_MKS_GREEN_UI
