@@ -1020,7 +1020,11 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
+<<<<<<< HEAD
 //#define S_CURVE_ACCELERATION                             // DIGA-Tech:
+=======
+//#define S_CURVE_ACCELERATION                               // DIGA-Tech:
+>>>>>>> ae44ba537e... update
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1768,7 +1772,11 @@
 #endif
 
 // Homing speeds (mm/min)
+<<<<<<< HEAD
 #define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }            // DIGA-Tech:
+=======
+#define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (20*60) }                     // DIGA-Tech:
+>>>>>>> ae44ba537e... update
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
