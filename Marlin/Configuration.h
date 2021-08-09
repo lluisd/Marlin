@@ -1025,10 +1025,14 @@
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 //#define S_CURVE_ACCELERATION                             // DIGA-Tech:
 =======
 //#define S_CURVE_ACCELERATION                               // DIGA-Tech:
 >>>>>>> a2d08a422e... update
+=======
+//#define S_CURVE_ACCELERATION                               // DIGA-Tech:
+>>>>>>> 2bc459726b... update
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1204,6 +1208,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }              // DIGA-Tech: probe offset
 =======
 #define NOZZLE_TO_PROBE_OFFSET { 33, -33, 0 }              // DIGA-Tech: probe offset
@@ -1214,6 +1219,9 @@
 =======
 #define NOZZLE_TO_PROBE_OFFSET { 33, -33, 0 }              // DIGA-Tech: probe offset
 >>>>>>> 700a6ab7a3... Marlin 2.0.9.1
+=======
+#define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }              // DIGA-Tech: probe offset
+>>>>>>> 2bc459726b... update
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1797,10 +1805,14 @@
 
 // Homing speeds (mm/min)
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }            // DIGA-Tech:
 =======
 #define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (20*60) }                     // DIGA-Tech:
 >>>>>>> a2d08a422e... update
+=======
+#define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (20*60) }                     // DIGA-Tech:
+>>>>>>> 2bc459726b... update
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
