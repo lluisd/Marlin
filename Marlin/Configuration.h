@@ -1194,10 +1194,14 @@
  *     O-- FRONT --+
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }              // DIGA-Tech: probe offset
 =======
 #define NOZZLE_TO_PROBE_OFFSET { 33, -33, 0 }              // DIGA-Tech: probe offset
 >>>>>>> 5ed54ea1df (Marlin 2.0.9.1)
+=======
+#define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }              // DIGA-Tech: probe offset
+>>>>>>> 68848e6c2e (update)
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
