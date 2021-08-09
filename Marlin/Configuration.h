@@ -508,7 +508,7 @@
 
 #define TEMP_RESIDENCY_TIME         10  // (seconds) Time to wait for hotend to "settle" in M109
 #define TEMP_WINDOW                  1  // (°C) Temperature proximity for the "temperature reached" timer
-#define TEMP_HYSTERESIS              3  // (°C) Temperature proximity considered "close enough" to the target
+#define TEMP_HYSTERESIS              5  // (°C) Temperature proximity considered "close enough" to the target          // DIGA-Tech:
 
 #define TEMP_BED_RESIDENCY_TIME     10  // (seconds) Time to wait for bed to "settle" in M190
 #define TEMP_BED_WINDOW              1  // (°C) Temperature proximity for the "temperature reached" timer
@@ -601,9 +601,14 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  22.20
-    #define DEFAULT_Ki   1.08
-    #define DEFAULT_Kd 114.00
+    // Artillery Sidewinder X1                             // DIGA-Tech:
+    #define DEFAULT_Kp 14.58                               // DIGA-Tech:
+    #define DEFAULT_Ki  1.14                               // DIGA-Tech:
+    #define DEFAULT_Kd 46.57                               // DIGA-Tech:
+
+    //#define DEFAULT_Kp  22.20                            // DIGA-Tech:
+    //#define DEFAULT_Ki   1.08                            // DIGA-Tech:
+    //#define DEFAULT_Kd 114.00                            // DIGA-Tech:
   #endif
 #endif // PIDTEMP
 
@@ -640,11 +645,16 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
+  // Artillery Sidewinder X1                               // DIGA-Tech:
+  #define DEFAULT_bedKp 244.21                             // DIGA-Tech:
+  #define DEFAULT_bedKi  45.87                             // DIGA-Tech:
+  #define DEFAULT_bedKd 325.08                             // DIGA-Tech:
+
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 10.00
-  #define DEFAULT_bedKi .023
-  #define DEFAULT_bedKd 305.4
+  //#define DEFAULT_bedKp 10.00                            // DIGA-Tech:
+  //#define DEFAULT_bedKi .023                             // DIGA-Tech:
+  //#define DEFAULT_bedKd 305.4                            // DIGA-Tech:
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -887,7 +897,7 @@
  *
  * :[2,3,4,5,6,7]
  */
-//#define ENDSTOP_NOISE_THRESHOLD 2
+#define ENDSTOP_NOISE_THRESHOLD 2                          // DIGA-Tech:
 
 // Check for stuck or disconnected endstops during homing moves.
 //#define DETECT_BROKEN_ENDSTOP
@@ -1006,7 +1016,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-//#define S_CURVE_ACCELERATION
+//#define S_CURVE_ACCELERATION                               // DIGA-Tech:
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1171,7 +1181,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 33, -33, 0 }              // DIGA-Tech: probe offset
+#define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }              // DIGA-Tech: probe offset
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1365,8 +1375,8 @@
 #define Y_BED_SIZE 305                                     // DIGA-Tech:
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define X_MIN_POS -3                                       // DIGA-Tech:
+#define Y_MIN_POS -3                                       // DIGA-Tech:
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
@@ -1737,7 +1747,7 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }
+#define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (20*60) }                     // DIGA-Tech:
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
