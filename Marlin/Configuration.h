@@ -1742,8 +1742,8 @@
 #define Z_SAFE_HOMING                                      // DIGA-Tech:
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT 0  // X point for Z homing                     // DIGA-Tech:
-  #define Z_SAFE_HOMING_Y_POINT 0  // Y point for Z homing                     // DIGA-Tech:
+  #define Z_SAFE_HOMING_X_POINT 0  // X point for Z homing           // DIGA-Tech:
+  #define Z_SAFE_HOMING_Y_POINT 0  // Y point for Z homing           // DIGA-Tech:
 #endif
 
 // Homing speeds (mm/min)
