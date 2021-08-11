@@ -489,15 +489,15 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
-  // BIQU-BX1
-  #define DEFAULT_Kp 11.89
-  #define DEFAULT_Ki 0.40
-  #define DEFAULT_Kd 59.08
+  // BIQU-BX1                                              // DIGA-Tech:
+  #define DEFAULT_Kp 11.89                                 // DIGA-Tech:
+  #define DEFAULT_Ki 0.40                                  // DIGA-Tech:
+  #define DEFAULT_Kd 59.08                                 // DIGA-Tech:
 
   // Ultimaker
-  // #define DEFAULT_Kp 22.2
-  // #define DEFAULT_Ki 1.08
-  // #define DEFAULT_Kd 114
+  //#define DEFAULT_Kp 22.2                                // DIGA-Tech:
+  //#define DEFAULT_Ki 1.08                                // DIGA-Tech:
+  //#define DEFAULT_Kd 114                                 // DIGA-Tech:
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
@@ -544,16 +544,16 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-  // BIQU-BX1
-  #define DEFAULT_bedKp 127.83
-  #define DEFAULT_bedKi 20.75
-  #define DEFAULT_bedKd 525.0
+  // BIQU-BX1                                              // DIGA-Tech:
+  #define DEFAULT_bedKp 127.83                             // DIGA-Tech:
+  #define DEFAULT_bedKi 20.75                              // DIGA-Tech:
+  #define DEFAULT_bedKd 525.0                              // DIGA-Tech:
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  //#define DEFAULT_bedKp 10.00
-  //#define DEFAULT_bedKi .023
-  //#define DEFAULT_bedKd 305.4
+  //#define DEFAULT_bedKp 10.00                            // DIGA-Tech:
+  //#define DEFAULT_bedKi .023                             // DIGA-Tech:
+  //#define DEFAULT_bedKd 305.4                            // DIGA-Tech:
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
@@ -581,7 +581,7 @@
  *
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
-//#define PREVENT_COLD_EXTRUSION                             // DIGA-Tech:
+#define PREVENT_COLD_EXTRUSION                             // DIGA-Tech:
 #define EXTRUDE_MINTEMP 170
 
 /**
@@ -670,13 +670,13 @@
 #endif
 
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
-#define X_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Y_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define X_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.           // DIGA-Tech:
+#define Y_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.           // DIGA-Tech:
+#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.           // DIGA-Tech:
 #define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
+#define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.       // DIGA-Tech:
 
 /**
  * Stepper Drivers
@@ -807,7 +807,7 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-//#define CLASSIC_JERK
+//#define CLASSIC_JERK                                     // DIGA-Tech:
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 10.0
   #define DEFAULT_YJERK 10.0
@@ -863,7 +863,7 @@
 //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN               // DIGA-Tech:
 
 // Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
+//#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech:
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1016,7 +1016,7 @@
 #define XY_PROBE_SPEED (80*60)                             // DIGA-Tech:
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
+#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z               // DIGA-Tech:
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
@@ -1107,8 +1107,8 @@
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR true                                  // DIGA-Tech:
-#define INVERT_Y_DIR true
-#define INVERT_Z_DIR false
+#define INVERT_Y_DIR true                                  // DIGA-Tech:
+#define INVERT_Z_DIR false                                 // DIGA-Tech:
 
 // @section extruder
 
@@ -1405,7 +1405,7 @@
 // - Move the Z probe (or nozzle) to a defined XY point before Z Homing.
 // - Prevent Z homing when the Z probe is outside bed area.
 //
-#define Z_SAFE_HOMING                                      // DIGA-Tech:
+//#define Z_SAFE_HOMING                                      // DIGA-Tech:
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing    // DIGA-Tech:
@@ -1414,7 +1414,7 @@
 
 // Homing speeds (mm/min)
 #define HOMING_FEEDRATE_XY (20*60)                         // DIGA-Tech:
-#define HOMING_FEEDRATE_Z  (4*60)
+#define HOMING_FEEDRATE_Z  (4*60)                          // DIGA-Tech:
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
