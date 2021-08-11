@@ -993,7 +993,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK    10.0  // May be used by Linear Advance      // DIGA-Tech:
+#define DEFAULT_EJERK   10.0  // May be used by Linear Advance       // DIGA-Tech:
 
 /**
  * Junction Deviation Factor
