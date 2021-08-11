@@ -831,11 +831,7 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
 #define Y_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
-<<<<<<< HEAD
 #define Z_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
-=======
-#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.           // DIGA-Tech: set to false due to usage of probe
->>>>>>> e26c11e14031d753153b86a7a54e6891b3a4ab6d
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -1020,11 +1016,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-<<<<<<< HEAD
 //#define S_CURVE_ACCELERATION                             // DIGA-Tech:
-=======
-//#define S_CURVE_ACCELERATION                               // DIGA-Tech:
->>>>>>> e26c11e14031d753153b86a7a54e6891b3a4ab6d
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1043,11 +1035,7 @@
 //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN               // DIGA-Tech: disabled due to usage of probe on Z max endstop
 
 // Force the use of the probe for Z-axis homing
-<<<<<<< HEAD
 #define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
-=======
-#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled due to usage of probe on Z max endstop
->>>>>>> e26c11e14031d753153b86a7a54e6891b3a4ab6d
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1335,11 +1323,7 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-<<<<<<< HEAD
 #define INVERT_X_DIR false                                 // DIGA-Tech:
-=======
-#define INVERT_X_DIR false
->>>>>>> e26c11e14031d753153b86a7a54e6891b3a4ab6d
 #define INVERT_Y_DIR false                                 // DIGA-Tech:
 #define INVERT_Z_DIR true                                  // DIGA-Tech:
 //#define INVERT_I_DIR false
@@ -1758,21 +1742,12 @@
 #define Z_SAFE_HOMING                                      // DIGA-Tech:
 
 #if ENABLED(Z_SAFE_HOMING)
-<<<<<<< HEAD
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing    // DIGA-Tech:
   #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing    // DIGA-Tech:
 #endif
 
 // Homing speeds (mm/min)
 #define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }            // DIGA-Tech:
-=======
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing              // DIGA-Tech:
-  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing              // DIGA-Tech:
-#endif
-
-// Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (20*60) }                     // DIGA-Tech:
->>>>>>> e26c11e14031d753153b86a7a54e6891b3a4ab6d
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
