@@ -478,7 +478,7 @@
  * The fan turns on automatically whenever any driver is enabled and turns
  * off (or reduces to idle speed) shortly after drivers are turned off.
  */
-//#define USE_CONTROLLER_FAN                                 // DIGA-Tech:
+#define USE_CONTROLLER_FAN                                 // DIGA-Tech:
 #if ENABLED(USE_CONTROLLER_FAN)
   //#define CONTROLLER_FAN_PIN -1        // Set a custom pin for the controller fan
   //#define CONTROLLER_FAN_USE_Z_ONLY    // With this option only the Z axis is considered
@@ -3559,7 +3559,7 @@
 /**
  * Auto-report temperatures with M155 S<seconds>
  */
-#define AUTO_REPORT_TEMPERATURES
+#define AUTO_REPORT_TEMPERATURES                           // DIGA-Tech:
 
 /**
  * Auto-report position with M154 S<seconds>
@@ -3569,7 +3569,7 @@
 /**
  * Include capabilities in M115 output
  */
-#define EXTENDED_CAPABILITIES_REPORT
+#define EXTENDED_CAPABILITIES_REPORT                       // DIGA-Tech:
 #if ENABLED(EXTENDED_CAPABILITIES_REPORT)
   #define M115_GEOMETRY_REPORT                             // DIGA-Tech:
 #endif
