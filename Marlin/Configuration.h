@@ -116,7 +116,11 @@
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
 #define BAUDRATE 250000                                    // DIGA-Tech:
+<<<<<<< HEAD
 #define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate         // DIGA-Tech:
+=======
+//#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
+>>>>>>> 89a18eb428 (update)
 
 /**
  * Select a secondary serial port on the board to use for communication with the host.
@@ -832,10 +836,14 @@
 #define X_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
 #define Y_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define Z_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
 =======
 #define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.           // DIGA-Tech: set to false due to usage of probe
 >>>>>>> 5ed54ea1df (Marlin 2.0.9.1)
+=======
+#define Z_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
+>>>>>>> 89a18eb428 (update)
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -997,7 +1005,11 @@
   #endif
 #endif
 
+<<<<<<< HEAD
 #define DEFAULT_EJERK   10.0  // May be used by Linear Advance       // DIGA-Tech:
+=======
+#define DEFAULT_EJERK    10.0  // May be used by Linear Advance      // DIGA-Tech:
+>>>>>>> 89a18eb428 (update)
 
 /**
  * Junction Deviation Factor
@@ -1021,10 +1033,14 @@
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 //#define S_CURVE_ACCELERATION                             // DIGA-Tech:
 =======
 //#define S_CURVE_ACCELERATION                               // DIGA-Tech:
 >>>>>>> d40a677736 (update)
+=======
+//#define S_CURVE_ACCELERATION                             // DIGA-Tech:
+>>>>>>> 89a18eb428 (update)
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1044,10 +1060,14 @@
 
 // Force the use of the probe for Z-axis homing
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
 =======
 #define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled due to usage of probe on Z max endstop
 >>>>>>> 5ed54ea1df (Marlin 2.0.9.1)
+=======
+#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
+>>>>>>> 89a18eb428 (update)
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1208,7 +1228,11 @@
 #define PROBING_MARGIN 10                                  // DIGA-Tech: probe margin
 
 // X and Y axis travel speed (mm/min) between probes
+<<<<<<< HEAD
 #define XY_PROBE_FEEDRATE (133*60)                         // DIGA-Tech:
+=======
+#define XY_PROBE_FEEDRATE (50*60)                          // DIGA-Tech:
+>>>>>>> 89a18eb428 (update)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_FEEDRATE_FAST (4*60)                       // DIGA-Tech:
@@ -1344,10 +1368,14 @@
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define INVERT_X_DIR false                                 // DIGA-Tech:
 =======
 #define INVERT_X_DIR false
 >>>>>>> 5ed54ea1df (Marlin 2.0.9.1)
+=======
+#define INVERT_X_DIR false                                 // DIGA-Tech:
+>>>>>>> 89a18eb428 (update)
 #define INVERT_Y_DIR false                                 // DIGA-Tech:
 #define INVERT_Z_DIR true                                  // DIGA-Tech:
 //#define INVERT_I_DIR false
@@ -1767,6 +1795,7 @@
 
 #if ENABLED(Z_SAFE_HOMING)
 <<<<<<< HEAD
+<<<<<<< HEAD
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing    // DIGA-Tech:
   #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing    // DIGA-Tech:
 =======
@@ -1781,6 +1810,14 @@
 =======
 #define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (20*60) }                     // DIGA-Tech:
 >>>>>>> d40a677736 (update)
+=======
+  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing    // DIGA-Tech:
+  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing    // DIGA-Tech:
+#endif
+
+// Homing speeds (mm/min)
+#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }            // DIGA-Tech:
+>>>>>>> 89a18eb428 (update)
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
