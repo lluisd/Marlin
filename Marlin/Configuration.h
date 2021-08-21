@@ -115,8 +115,13 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
+<<<<<<< HEAD
 #define BAUDRATE 250000
 //#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
+=======
+#define BAUDRATE 250000                                    // DIGA-Tech:
+#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate         // DIGA-Tech:
+>>>>>>> 1daeec7a43 (update)
 
 /**
  * Select a secondary serial port on the board to use for communication with the host.
