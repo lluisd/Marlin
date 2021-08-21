@@ -1883,19 +1883,7 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define LIN_ADVANCE                                        // DIGA-Tech:
-=======
-#define LIN_ADVANCE                                                                      // DIGA-Tech:
->>>>>>> 909cb1acab... Marlin 2.0.9.1
-=======
-#define LIN_ADVANCE                                                                      // DIGA-Tech:
->>>>>>> 700a6ab7a3... Marlin 2.0.9.1
-=======
-#define LIN_ADVANCE                                        // DIGA-Tech:
->>>>>>> ccd4d24a7f... update
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
   #define LIN_ADVANCE_K 0.13    // Unit: mm compression per 1mm/s extruder speed         // DIGA-Tech:

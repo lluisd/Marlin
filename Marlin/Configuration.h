@@ -831,19 +831,7 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
 #define Y_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define Z_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
-=======
-#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.           // DIGA-Tech: set to false due to usage of probe
->>>>>>> 909cb1acab... Marlin 2.0.9.1
-=======
-#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.           // DIGA-Tech: set to false due to usage of probe
->>>>>>> 700a6ab7a3... Marlin 2.0.9.1
-=======
-#define Z_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
->>>>>>> ccd4d24a7f... update
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -1028,19 +1016,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 //#define S_CURVE_ACCELERATION                             // DIGA-Tech:
-=======
-//#define S_CURVE_ACCELERATION                               // DIGA-Tech:
->>>>>>> a2d08a422e... update
-=======
-//#define S_CURVE_ACCELERATION                               // DIGA-Tech:
->>>>>>> 2bc459726b... update
-=======
-//#define S_CURVE_ACCELERATION                             // DIGA-Tech:
->>>>>>> ccd4d24a7f... update
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1059,19 +1035,7 @@
 //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN               // DIGA-Tech: disabled due to usage of probe on Z max endstop
 
 // Force the use of the probe for Z-axis homing
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
-=======
-#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled due to usage of probe on Z max endstop
->>>>>>> 909cb1acab... Marlin 2.0.9.1
-=======
-#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled due to usage of probe on Z max endstop
->>>>>>> 700a6ab7a3... Marlin 2.0.9.1
-=======
-#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
->>>>>>> ccd4d24a7f... update
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1217,23 +1181,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }              // DIGA-Tech: probe offset
-=======
-#define NOZZLE_TO_PROBE_OFFSET { 33, -33, 0 }              // DIGA-Tech: probe offset
->>>>>>> 909cb1acab... Marlin 2.0.9.1
-=======
-#define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }              // DIGA-Tech: probe offset
->>>>>>> a2d08a422e... update
-=======
-#define NOZZLE_TO_PROBE_OFFSET { 33, -33, 0 }              // DIGA-Tech: probe offset
->>>>>>> 700a6ab7a3... Marlin 2.0.9.1
-=======
-#define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }              // DIGA-Tech: probe offset
->>>>>>> 2bc459726b... update
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1375,18 +1323,7 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define INVERT_X_DIR false                                 // DIGA-Tech:
-=======
-#define INVERT_X_DIR false
-<<<<<<< HEAD
->>>>>>> 909cb1acab... Marlin 2.0.9.1
-=======
->>>>>>> 700a6ab7a3... Marlin 2.0.9.1
-=======
-#define INVERT_X_DIR false                                 // DIGA-Tech:
->>>>>>> ccd4d24a7f... update
 #define INVERT_Y_DIR false                                 // DIGA-Tech:
 #define INVERT_Z_DIR true                                  // DIGA-Tech:
 //#define INVERT_I_DIR false
@@ -1805,39 +1742,12 @@
 #define Z_SAFE_HOMING                                      // DIGA-Tech:
 
 #if ENABLED(Z_SAFE_HOMING)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing    // DIGA-Tech:
-  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing    // DIGA-Tech:
-=======
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing              // DIGA-Tech:
-  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing              // DIGA-Tech:
->>>>>>> 909cb1acab... Marlin 2.0.9.1
-=======
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing              // DIGA-Tech:
-  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing              // DIGA-Tech:
->>>>>>> 700a6ab7a3... Marlin 2.0.9.1
-#endif
-
-// Homing speeds (mm/min)
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }            // DIGA-Tech:
-=======
-#define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (20*60) }                     // DIGA-Tech:
->>>>>>> a2d08a422e... update
-=======
-#define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (20*60) }                     // DIGA-Tech:
->>>>>>> 2bc459726b... update
-=======
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing    // DIGA-Tech:
   #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing    // DIGA-Tech:
 #endif
 
 // Homing speeds (mm/min)
 #define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }            // DIGA-Tech:
->>>>>>> ccd4d24a7f... update
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
