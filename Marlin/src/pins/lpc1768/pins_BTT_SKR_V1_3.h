@@ -164,9 +164,6 @@
   //#define E3_HARDWARE_SERIAL Serial1
   //#define E4_HARDWARE_SERIAL Serial1
 
-  //
-  // Software serial
-  //
   #define X_SERIAL_TX_PIN                  P4_29
   #define X_SERIAL_RX_PIN                  P1_17
 
@@ -265,7 +262,7 @@
 
   #elif HAS_ADC_BUTTONS
 
-    #error "ADC BUTTONS do not work unmodifed on SKR 1.3, The ADC ports cannot take more than 3.3v."
+    #error "ADC BUTTONS do not work unmodified on SKR 1.3, The ADC ports cannot take more than 3.3v."
 
   #elif HAS_SPI_TFT                               // Config for Classic UI (emulated DOGM) and Color UI
 

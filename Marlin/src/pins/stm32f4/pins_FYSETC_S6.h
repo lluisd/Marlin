@@ -50,13 +50,15 @@
   // 128 kB sector allocated for EEPROM emulation.
   #define FLASH_EEPROM_LEVELING
 #elif ENABLED(I2C_EEPROM)
-  #define MARLIN_EEPROM_SIZE              0x0800  // 2KB
+  #define MARLIN_EEPROM_SIZE              0x1000  // 4KB
 #endif
 
 //
 // Servos
 //
-#define SERVO0_PIN                          PA3
+#ifndef SERVO0_PIN
+  #define SERVO0_PIN                        PA3
+#endif
 
 //
 // Limit Switches
@@ -116,9 +118,6 @@
   // TMC2208/TMC2209 stepper drivers
   //
 
-  //
-  // Software serial
-  //
   #ifndef X_SERIAL_TX_PIN
     #define X_SERIAL_TX_PIN                 PE9
   #endif
@@ -196,7 +195,6 @@
 // Misc. Functions
 //
 //#define LED_PIN                           PB14
-//#define BTN_PIN                           PC10
 //#define PS_ON_PIN                         PE11
 //#define KILL_PIN                          PC5
 

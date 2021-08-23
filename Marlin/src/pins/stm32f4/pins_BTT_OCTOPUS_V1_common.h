@@ -282,32 +282,29 @@
   //#define E3_HARDWARE_SERIAL Serial1
   //#define E4_HARDWARE_SERIAL Serial1
 
-  //
-  // Software serial
-  //
   #define X_SERIAL_TX_PIN                   PC4
-  #define X_SERIAL_RX_PIN                   PC4
+  #define X_SERIAL_RX_PIN        X_SERIAL_TX_PIN
 
   #define Y_SERIAL_TX_PIN                   PD11
-  #define Y_SERIAL_RX_PIN                   PD11
+  #define Y_SERIAL_RX_PIN        Y_SERIAL_TX_PIN
 
   #define Z_SERIAL_TX_PIN                   PC6
-  #define Z_SERIAL_RX_PIN                   PC6
+  #define Z_SERIAL_RX_PIN        Z_SERIAL_TX_PIN
 
   #define Z2_SERIAL_TX_PIN                  PC7
-  #define Z2_SERIAL_RX_PIN                  PC7
+  #define Z2_SERIAL_RX_PIN      Z2_SERIAL_TX_PIN
 
   #define E0_SERIAL_TX_PIN                  PF2
-  #define E0_SERIAL_RX_PIN                  PF2
+  #define E0_SERIAL_RX_PIN      E0_SERIAL_TX_PIN
 
   #define E1_SERIAL_TX_PIN                  PE4
-  #define E1_SERIAL_RX_PIN                  PE4
+  #define E1_SERIAL_RX_PIN      E1_SERIAL_TX_PIN
 
   #define E2_SERIAL_TX_PIN                  PE1
-  #define E2_SERIAL_RX_PIN                  PE1
+  #define E2_SERIAL_RX_PIN      E2_SERIAL_TX_PIN
 
   #define E3_SERIAL_TX_PIN                  PD3
-  #define E3_SERIAL_RX_PIN                  PD3
+  #define E3_SERIAL_RX_PIN      E3_SERIAL_TX_PIN
 
   // Reduce baud rate to improve software serial reliability
   #define TMC_BAUD_RATE                    19200
@@ -387,7 +384,7 @@
   #define E4_CS_PIN                  EXP1_05_PIN
   #if HAS_TMC_UART
     #define E4_SERIAL_TX_PIN         EXP1_05_PIN
-    #define E4_SERIAL_RX_PIN         EXP1_05_PIN
+    #define E4_SERIAL_RX_PIN    E4_SERIAL_TX_PIN
   #endif
 
   // M2 on Driver Expansion Module
@@ -398,7 +395,7 @@
   #define E5_CS_PIN                  EXP1_07_PIN
   #if HAS_TMC_UART
     #define E5_SERIAL_TX_PIN         EXP1_07_PIN
-    #define E5_SERIAL_RX_PIN         EXP1_07_PIN
+    #define E5_SERIAL_RX_PIN    E5_SERIAL_TX_PIN
   #endif
 
   // M3 on Driver Expansion Module
@@ -409,7 +406,7 @@
   #define E6_CS_PIN                  EXP1_09_PIN
   #if HAS_TMC_UART
     #define E6_SERIAL_TX_PIN         EXP1_09_PIN
-    #define E6_SERIAL_RX_PIN         EXP1_09_PIN
+    #define E6_SERIAL_RX_PIN    E6_SERIAL_TX_PIN
   #endif
 
 #endif // BTT_MOTOR_EXPANSION
@@ -498,6 +495,24 @@
   #ifndef BOARD_ST7920_DELAY_3
     #define BOARD_ST7920_DELAY_3   DELAY_NS(580)  // DELAY_NS(600)
   #endif
+#endif
+
+#if HAS_SPI_TFT
+  #define TFT_CS_PIN                 EXP2_07_PIN
+  #define TFT_A0_PIN                 EXP2_04_PIN
+  #define TFT_SCK_PIN                EXP2_09_PIN
+  #define TFT_MISO_PIN               EXP2_10_PIN
+  #define TFT_MOSI_PIN               EXP2_05_PIN
+
+  #define TOUCH_INT_PIN              EXP1_04_PIN
+  #define TOUCH_MISO_PIN             EXP1_05_PIN
+  #define TOUCH_MOSI_PIN             EXP1_08_PIN
+  #define TOUCH_SCK_PIN              EXP1_06_PIN
+  #define TOUCH_CS_PIN               EXP1_07_PIN
+
+  #define BTN_EN1                    EXP2_08_PIN
+  #define BTN_EN2                    EXP2_06_PIN
+  #define BTN_ENC                    EXP1_09_PIN
 #endif
 
 //

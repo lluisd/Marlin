@@ -147,24 +147,20 @@
   //#define E3_HARDWARE_SERIAL Serial1
   //#define E4_HARDWARE_SERIAL Serial1
 
-  //
-  // Software serial
-  //
-
   #define X_SERIAL_TX_PIN                   PD5
-  #define X_SERIAL_RX_PIN                   PD5
+  #define X_SERIAL_RX_PIN        X_SERIAL_TX_PIN
 
   #define Y_SERIAL_TX_PIN                   PD7
-  #define Y_SERIAL_RX_PIN                   PD7
+  #define Y_SERIAL_RX_PIN        Y_SERIAL_TX_PIN
 
   #define Z_SERIAL_TX_PIN                   PD4
-  #define Z_SERIAL_RX_PIN                   PD4
+  #define Z_SERIAL_RX_PIN        Z_SERIAL_TX_PIN
 
   #define E0_SERIAL_TX_PIN                  PD9
-  #define E0_SERIAL_RX_PIN                  PD9
+  #define E0_SERIAL_RX_PIN      E0_SERIAL_TX_PIN
 
   #define E1_SERIAL_TX_PIN                  PD8
-  #define E1_SERIAL_RX_PIN                  PD8
+  #define E1_SERIAL_RX_PIN      E1_SERIAL_TX_PIN
 
   // Reduce baud rate to improve software serial reliability
   #define TMC_BAUD_RATE                    19200
@@ -189,18 +185,25 @@
 //
 // Thermocouples
 //
-//#define MAX6675_SS_PIN                    PE5   // TC1 - CS1
-//#define MAX6675_SS_PIN                    PE6   // TC2 - CS2
+//#define TEMP_0_CS_PIN                     PE5   // TC1 - CS1
+//#define TEMP_0_CS_PIN                     PE6   // TC2 - CS2
 
 //
 // Misc. Functions
 //
 //#define POWER_LOSS_PIN                    PA2   // PW_DET
 //#define PS_ON_PIN                         PA3   // PW_OFF
-//#define SUICIDE_PIN                       PB2   // Enable MKSPWC support
-//#define KILL_PIN                          PA2   // Enable MKSPWC support
-//#define KILL_PIN_INVERTING                true  // Enable MKSPWC support
-//#define LED_PIN                           PB2
+
+//
+// Power Supply Control
+//
+#if ENABLED(MKS_PWC)
+  #define SUICIDE_PIN                       PB2
+  #define KILL_PIN                          PA2
+  #define KILL_PIN_STATE                    LOW
+#else
+  #define LED_PIN                           PB2
+#endif
 
 #ifndef SDCARD_CONNECTION
   #define SDCARD_CONNECTION ONBOARD
@@ -212,7 +215,7 @@
 // Onboard SD card
 // NOT compatible with LCD
 //
-// detect pin dont work when ONBOARD and NO_SD_HOST_DRIVE disabled
+// detect pin doesn't work when ONBOARD and NO_SD_HOST_DRIVE disabled
 #if !defined(SDCARD_CONNECTION) || SDCARD_CONNECTION == ONBOARD
   #if USE_NEW_SPI_API
     #define SD_SPI MARLIN_SPI(HardwareSPI3, PC9)
@@ -244,14 +247,14 @@
 //
 // LCD / Controller
 #define SPI_FLASH
-#define HAS_SPI_FLASH 1
+#define HAS_SPI_FLASH                          1
 #define SPI_DEVICE                             2
 #define SPI_FLASH_SIZE                 0x1000000
 #if ENABLED(SPI_FLASH)
-  #define W25QXX_CS_PIN                     PB12
-  #define W25QXX_MOSI_PIN                   PB15
-  #define W25QXX_MISO_PIN                   PB14
-  #define W25QXX_SCK_PIN                    PB13
+  #define SPI_FLASH_CS_PIN                  PB12
+  #define SPI_FLASH_MOSI_PIN                PB15
+  #define SPI_FLASH_MISO_PIN                PB14
+  #define SPI_FLASH_SCK_PIN                 PB13
 #endif
 
 /**
