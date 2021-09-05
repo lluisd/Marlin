@@ -1053,10 +1053,14 @@
 
 // Force the use of the probe for Z-axis homing
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled due to usage of probe on Z max endstop
 =======
 #define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
 >>>>>>> 5b4176c391 (update)
+=======
+//#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
+>>>>>>> 689d162887 (update)
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1764,7 +1768,7 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-#define Z_SAFE_HOMING                                      // DIGA-Tech:
+//#define Z_SAFE_HOMING                                      // DIGA-Tech:
 
 #if ENABLED(Z_SAFE_HOMING)
 <<<<<<< HEAD
@@ -2155,7 +2159,7 @@
 // This option overrides the default number of encoder pulses needed to
 // produce one step. Should be increased for high-resolution encoders.
 //
-//#define ENCODER_PULSES_PER_STEP 4
+#define ENCODER_PULSES_PER_STEP 2                          // DIGA-Tech:
 
 //
 // Use this option to override the number of step signals required to
