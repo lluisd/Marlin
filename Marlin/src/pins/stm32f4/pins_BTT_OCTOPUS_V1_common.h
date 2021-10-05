@@ -91,7 +91,11 @@
   #else
     #define X_MIN_PIN                E0_DIAG_PIN  // E0DET
   #endif
+<<<<<<< HEAD
 #elif EITHER(DUAL_X_CARRIAGE, NEEDS_X_MINMAX)
+=======
+#elif EITHER(X_DUAL_ENDSTOPS, DUAL_X_CARRIAGE)
+>>>>>>> ca967a5eef (update to 2.0.9.2)
   #ifndef X_MIN_PIN
     #define X_MIN_PIN                 X_DIAG_PIN  // X-STOP
   #endif
