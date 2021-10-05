@@ -29,16 +29,20 @@
  * Marlin release version identifier
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 //#define SHORT_BUILD_VERSION "2.0.9.2"
 =======
 //#define SHORT_BUILD_VERSION "2.0.9.2"                                        // DIGA-Tech:
 >>>>>>> 2c0ea1353d (update to 2.0.9.2)
+=======
+//#define SHORT_BUILD_VERSION "2.0.9.2"                                        // DIGA-Tech:
+>>>>>>> 4cbe8764d591a827afd8e73320bfbb60320828a0
 
 /**
  * Verbose version identifier which should contain a reference to the location
  * from where the binary was downloaded or the source code was compiled.
  */
-//#define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION
+#define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " - DIGA-Tech ASWX1 v1.0"   // DIGA-Tech:
 
 /**
  * The STRING_DISTRIBUTION_DATE represents when the binary file was built,
@@ -46,15 +50,19 @@
  * version was tagged.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 //#define STRING_DISTRIBUTION_DATE "2021-09-03"
 =======
 //#define STRING_DISTRIBUTION_DATE "2021-09-03"                                // DIGA-Tech:
 >>>>>>> 2c0ea1353d (update to 2.0.9.2)
+=======
+//#define STRING_DISTRIBUTION_DATE "2021-09-03"                                // DIGA-Tech:
+>>>>>>> 4cbe8764d591a827afd8e73320bfbb60320828a0
 
 /**
  * Defines a generic printer name to be output to the LCD after booting Marlin.
  */
-//#define MACHINE_NAME "3D Printer"
+#define MACHINE_NAME "Artillery Sidewinder X1"                                 // DIGA-Tech:
 
 /**
  * The SOURCE_CODE_URL is the location where users will find the Marlin Source
