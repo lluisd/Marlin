@@ -3836,7 +3836,11 @@
 //#define HOST_ACTION_COMMANDS
 #if ENABLED(HOST_ACTION_COMMANDS)
   //#define HOST_PAUSE_M76
+<<<<<<< HEAD
   //#define HOST_PROMPT_SUPPORT
+=======
+  #define HOST_PROMPT_SUPPORT                              // DIGA-Tech:
+>>>>>>> 2c0ea1353d (update to 2.0.9.2)
   //#define HOST_START_MENU_ITEM  // Add a menu item that tells the host to start
 #endif
 
