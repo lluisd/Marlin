@@ -1064,6 +1064,7 @@
 // Force the use of the probe for Z-axis homing
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled due to usage of probe on Z max endstop
 =======
 #define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
@@ -1071,6 +1072,9 @@
 =======
 //#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
 >>>>>>> 689d162887 (update)
+=======
+#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
+>>>>>>> 6d30a76248 (update to 2.0.9.2)
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1778,7 +1782,7 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-//#define Z_SAFE_HOMING                                      // DIGA-Tech:
+#define Z_SAFE_HOMING                                      // DIGA-Tech:
 
 #if ENABLED(Z_SAFE_HOMING)
 <<<<<<< HEAD
