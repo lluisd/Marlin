@@ -483,15 +483,9 @@
   #endif
 
   // Alter timing for graphical display
-<<<<<<< HEAD
   #if IS_U8GLIB_ST7920
     #define BOARD_ST7920_DELAY_1             125
     #define BOARD_ST7920_DELAY_2              90
-=======
-  #if ENABLED(U8GLIB_ST7920)
-    #define BOARD_ST7920_DELAY_1              96
-    #define BOARD_ST7920_DELAY_2              48
->>>>>>> ca967a5eef (update to 2.0.9.2)
     #define BOARD_ST7920_DELAY_3             600
   #endif
 

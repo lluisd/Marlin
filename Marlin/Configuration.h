@@ -115,18 +115,8 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define BAUDRATE 250000
-//#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
-=======
 #define BAUDRATE 250000                                    // DIGA-Tech:
 #define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate         // DIGA-Tech:
->>>>>>> 1daeec7a43 (update)
-=======
-#define BAUDRATE 250000                                    // DIGA-Tech:
-#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate         // DIGA-Tech:
->>>>>>> 2f1e8f0b83c0a6f908bc803e508e4dce8c7831e9
 
 /**
  * Select a secondary serial port on the board to use for communication with the host.
@@ -851,15 +841,7 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
 #define Y_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.           // DIGA-Tech: set to false due to usage of probe
-=======
 #define Z_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
->>>>>>> 5b4176c391 (update)
-=======
-#define Z_MIN_ENDSTOP_INVERTING true  // Set to true to invert the logic of the endstop.           // DIGA-Tech:
->>>>>>> 2f1e8f0b83c0a6f908bc803e508e4dce8c7831e9
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -1021,15 +1003,7 @@
   #endif
 #endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define DEFAULT_EJERK    5.0  // May be used by Linear Advance
-=======
 #define DEFAULT_EJERK   10.0  // May be used by Linear Advance       // DIGA-Tech:
->>>>>>> bd0270b7ee (update)
-=======
-#define DEFAULT_EJERK   10.0  // May be used by Linear Advance       // DIGA-Tech:
->>>>>>> 2f1e8f0b83c0a6f908bc803e508e4dce8c7831e9
 
 /**
  * Junction Deviation Factor
@@ -1052,15 +1026,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-//#define S_CURVE_ACCELERATION                               // DIGA-Tech:
-=======
 //#define S_CURVE_ACCELERATION                             // DIGA-Tech:
->>>>>>> 5b4176c391 (update)
-=======
-//#define S_CURVE_ACCELERATION                             // DIGA-Tech:
->>>>>>> 2f1e8f0b83c0a6f908bc803e508e4dce8c7831e9
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1079,23 +1045,7 @@
 //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN               // DIGA-Tech: disabled due to usage of probe on Z max endstop
 
 // Force the use of the probe for Z-axis homing
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled due to usage of probe on Z max endstop
-=======
 #define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
->>>>>>> 5b4176c391 (update)
-=======
-//#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
->>>>>>> 689d162887 (update)
-=======
-#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
->>>>>>> 6d30a76248 (update to 2.0.9.2)
-=======
-#define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
->>>>>>> 2f1e8f0b83c0a6f908bc803e508e4dce8c7831e9
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1183,7 +1133,7 @@
 #endif
 
 // Duet Smart Effector (for delta printers) - https://bit.ly/2ul5U7J
-// When the pin is defined you can use M672 to set/reset the probe sensivity.
+// When the pin is defined you can use M672 to set/reset the probe sensitivity.
 //#define DUET_SMART_EFFECTOR
 #if ENABLED(DUET_SMART_EFFECTOR)
   #define SMART_EFFECTOR_MOD_PIN  -1  // Connect a GPIO pin to the Smart Effector MOD pin
@@ -1383,15 +1333,7 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define INVERT_X_DIR false
-=======
 #define INVERT_X_DIR false                                 // DIGA-Tech:
->>>>>>> 5b4176c391 (update)
-=======
-#define INVERT_X_DIR false                                 // DIGA-Tech:
->>>>>>> 2f1e8f0b83c0a6f908bc803e508e4dce8c7831e9
 #define INVERT_Y_DIR false                                 // DIGA-Tech:
 #define INVERT_Z_DIR true                                  // DIGA-Tech:
 //#define INVERT_I_DIR false
@@ -1810,27 +1752,12 @@
 #define Z_SAFE_HOMING                                      // DIGA-Tech:
 
 #if ENABLED(Z_SAFE_HOMING)
-<<<<<<< HEAD
-<<<<<<< HEAD
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing              // DIGA-Tech:
-  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing              // DIGA-Tech:
-#endif
-
-// Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (20*60) }                     // DIGA-Tech:
-=======
-=======
->>>>>>> 2f1e8f0b83c0a6f908bc803e508e4dce8c7831e9
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing    // DIGA-Tech:
   #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing    // DIGA-Tech:
 #endif
 
 // Homing speeds (mm/min)
 #define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }            // DIGA-Tech:
-<<<<<<< HEAD
->>>>>>> 5b4176c391 (update)
-=======
->>>>>>> 2f1e8f0b83c0a6f908bc803e508e4dce8c7831e9
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
@@ -2633,6 +2560,29 @@
 // DGUS Touch Display with DWIN OS. (Choose one.)
 // ORIGIN : https://www.aliexpress.com/item/32993409517.html
 // FYSETC : https://www.aliexpress.com/item/32961471929.html
+// MKS    : https://www.aliexpress.com/item/1005002008179262.html
+//
+// Flash display with DGUS Displays for Marlin:
+//  - Format the SD card to FAT32 with an allocation size of 4kb.
+//  - Download files as specified for your type of display.
+//  - Plug the microSD card into the back of the display.
+//  - Boot the display and wait for the update to complete.
+//
+// ORIGIN (Marlin DWIN_SET)
+//  - Download https://github.com/coldtobi/Marlin_DGUS_Resources
+//  - Copy the downloaded DWIN_SET folder to the SD card.
+//
+// FYSETC (Supplier default)
+//  - Download https://github.com/FYSETC/FYSTLCD-2.0
+//  - Copy the downloaded SCREEN folder to the SD card.
+//
+// HIPRECY (Supplier default)
+//  - Download https://github.com/HiPrecy/Touch-Lcd-LEO
+//  - Copy the downloaded DWIN_SET folder to the SD card.
+//
+// MKS (MKS-H43) (Supplier default)
+//  - Download https://github.com/makerbase-mks/MKS-H43
+//  - Copy the downloaded DWIN_SET folder to the SD card.
 //
 // RELOADED (T5UID1)
 //  - Download https://github.com/Desuuuu/DGUS-reloaded/releases
@@ -2641,7 +2591,6 @@
 //#define DGUS_LCD_UI_ORIGIN
 //#define DGUS_LCD_UI_FYSETC
 //#define DGUS_LCD_UI_HIPRECY
-
 //#define DGUS_LCD_UI_MKS
 //#define DGUS_LCD_UI_RELOADED
 #if ENABLED(DGUS_LCD_UI_MKS)
