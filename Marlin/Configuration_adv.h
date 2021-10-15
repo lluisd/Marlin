@@ -1916,10 +1916,14 @@
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define LIN_ADVANCE                                                                      // DIGA-Tech:
 =======
 #define LIN_ADVANCE                                        // DIGA-Tech:
 >>>>>>> d4377c5c3a (update)
+=======
+#define LIN_ADVANCE                                        // DIGA-Tech:
+>>>>>>> 2f1e8f0b83c0a6f908bc803e508e4dce8c7831e9
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
   #define LIN_ADVANCE_K 0.13    // Unit: mm compression per 1mm/s extruder speed         // DIGA-Tech:
@@ -3609,7 +3613,7 @@
 /**
  * Auto-report temperatures with M155 S<seconds>
  */
-#define AUTO_REPORT_TEMPERATURES
+#define AUTO_REPORT_TEMPERATURES                           // DIGA-Tech:
 
 /**
  * Auto-report position with M154 S<seconds>
@@ -3619,7 +3623,7 @@
 /**
  * Include capabilities in M115 output
  */
-#define EXTENDED_CAPABILITIES_REPORT
+#define EXTENDED_CAPABILITIES_REPORT                       // DIGA-Tech:
 #if ENABLED(EXTENDED_CAPABILITIES_REPORT)
   #define M115_GEOMETRY_REPORT                             // DIGA-Tech:
 #endif
