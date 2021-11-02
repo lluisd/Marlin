@@ -2224,7 +2224,7 @@
 //#define TFT_320x240_SPI
 //#define TFT_480x320
 //#define TFT_480x320_SPI
-#define TFT_1024x600_LTDC                                  // DIGA-Tech:
+//#define TFT_1024x600_LTDC
 
 //
 // Skip autodetect and force specific TFT driver
@@ -2243,7 +2243,7 @@
 // LTDC display (BTT SE-BX, etc.)
 // Upscaled 128x64 Marlin UI
 //
-//#define LTDC_GRAPHICAL_TFT
+#define LTDC_GRAPHICAL_TFT                                 // DIGA-Tech:
 
 //
 // FSMC display (MKS Robin, Alfawise U20, JGAurora A5S, REXYZ A1, etc.)
