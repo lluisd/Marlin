@@ -2633,7 +2633,7 @@
 //#define EXTENSIBLE_UI                                      // DIGA-Tech:
 
 #if ENABLED(EXTENSIBLE_UI)
-  //#define EXTUI_LOCAL_BEEPER // Enables use of local Beeper pin with external display    // DIGA-Tech:
+  #define EXTUI_LOCAL_BEEPER // Enables use of local Beeper pin with external display    // DIGA-Tech:
 #endif
 
 //=============================================================================
