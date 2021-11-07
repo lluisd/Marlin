@@ -71,7 +71,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(DIGA-Tech, BIQU-BX v1.0)" // Who made the changes.      // DIGA-Tech:
+#define STRING_CONFIG_H_AUTHOR "(DIGA-Tech, BIQU BX v1.0)" // Who made the changes.      // DIGA-Tech:
 #define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)        // DIGA-Tech:
 
 /**
@@ -132,7 +132,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "BIQU-BX"                      // DIGA-Tech:
+#define CUSTOM_MACHINE_NAME "BIQU BX"                      // DIGA-Tech:
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -489,7 +489,7 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
-  // BIQU-BX1                                              // DIGA-Tech:
+  // BIQU-BX                                               // DIGA-Tech:
   #define DEFAULT_Kp 11.89                                 // DIGA-Tech:
   #define DEFAULT_Ki 0.40                                  // DIGA-Tech:
   #define DEFAULT_Kd 59.08                                 // DIGA-Tech:
@@ -544,7 +544,7 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-  // BIQU-BX1                                              // DIGA-Tech:
+  // BIQU-BX                                               // DIGA-Tech:
   #define DEFAULT_bedKp 127.83                             // DIGA-Tech:
   #define DEFAULT_bedKi 20.75                              // DIGA-Tech:
   #define DEFAULT_bedKd 525.0                              // DIGA-Tech:
