@@ -69,7 +69,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(DIGA-Tech, BIQU-BX v1.0)" // Who made the changes.      // DIGA-Tech:
+#define STRING_CONFIG_H_AUTHOR "(DIGA-Tech, BIQU BX v1.0)" // Who made the changes.      // DIGA-Tech:
 #define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)        // DIGA-Tech:
 
 /**
@@ -123,8 +123,8 @@
  * Currently Ethernet (-2) is only supported on Teensy 4.1 boards.
  * :[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#define SERIAL_PORT_2 -1                                             // DIGA-Tech:
-#define BAUDRATE_2 115200   // Enable to override BAUDRATE           // DIGA-Tech:
+//#define SERIAL_PORT_2 -1                                             // DIGA-Tech:
+//#define BAUDRATE_2 115200   // Enable to override BAUDRATE           // DIGA-Tech:
 
 /**
  * Select a third serial port on the board to use for communication with the host.
@@ -143,7 +143,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "BIQU-BX"                      // DIGA-Tech:
+#define CUSTOM_MACHINE_NAME "BIQU BX"                      // DIGA-Tech:
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -600,7 +600,7 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    // BIQU-BX1                                            // DIGA-Tech:
+    // BIQU BX                                             // DIGA-Tech:
     #define DEFAULT_Kp 11.89                               // DIGA-Tech:
     #define DEFAULT_Ki 0.40                                // DIGA-Tech:
     #define DEFAULT_Kd 59.08                               // DIGA-Tech:
@@ -644,7 +644,7 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-  // BIQU-BX1                                              // DIGA-Tech:
+  // BIQU BX                                               // DIGA-Tech:
   #define DEFAULT_bedKp 127.83                             // DIGA-Tech:
   #define DEFAULT_bedKi 20.75                              // DIGA-Tech:
   #define DEFAULT_bedKd 525.0                              // DIGA-Tech:
@@ -936,14 +936,14 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80*2, 80*2, 400*2, 932 }               // DIGA-Tech:
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80*2, 80*2, 400*2, 910 }               // DIGA-Tech:
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 200, 200, 5, 40 }                      // DIGA-Tech:
+#define DEFAULT_MAX_FEEDRATE          { 200, 200, 10, 65 }                     // DIGA-Tech:
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -971,9 +971,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          800     // X, Y, Z and E acceleration for printing moves               // DIGA-Tech:
-#define DEFAULT_RETRACT_ACCELERATION  800     // E acceleration for retracts                                 // DIGA-Tech:
-#define DEFAULT_TRAVEL_ACCELERATION   800     // X, Y, Z acceleration for travel (non printing) moves        // DIGA-Tech:
+#define DEFAULT_ACCELERATION          1000     // X, Y, Z and E acceleration for printing moves              // DIGA-Tech:
+#define DEFAULT_RETRACT_ACCELERATION  1000     // E acceleration for retracts                                // DIGA-Tech:
+#define DEFAULT_TRAVEL_ACCELERATION   1000     // X, Y, Z acceleration for travel (non printing) moves       // DIGA-Tech:
 
 /**
  * Default Jerk limits (mm/s)
@@ -983,11 +983,11 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-//#define CLASSIC_JERK                                     // DIGA-Tech:
+#define CLASSIC_JERK                                       // DIGA-Tech:
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 10.0
   #define DEFAULT_YJERK 10.0
-  #define DEFAULT_ZJERK  0.3
+  #define DEFAULT_ZJERK  2.0                               // DIGA-Tech:
   //#define DEFAULT_IJERK  0.3
   //#define DEFAULT_JJERK  0.3
   //#define DEFAULT_KJERK  0.3
@@ -1000,7 +1000,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK    5.0  // May be used by Linear Advance
+#define DEFAULT_EJERK   10.0  // May be used by Linear Advance       // DIGA-Tech:
 
 /**
  * Junction Deviation Factor
@@ -1023,7 +1023,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-#define S_CURVE_ACCELERATION                               // DIGA-Tech:
+//#define S_CURVE_ACCELERATION                             // DIGA-Tech:
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1195,10 +1195,10 @@
 #define PROBING_MARGIN 10                                  // DIGA-Tech: probe margin
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_FEEDRATE (80*60)                          // DIGA-Tech:
+#define XY_PROBE_FEEDRATE (200*60)                         // DIGA-Tech:
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_FEEDRATE_FAST (4*60)                       // DIGA-Tech:
+#define Z_PROBE_FEEDRATE_FAST (12*60)                      // DIGA-Tech:
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2)
@@ -1443,9 +1443,9 @@
  * RAMPS-based boards use SERVO3_PIN for the first runout sensor.
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  */
-//#define FILAMENT_RUNOUT_SENSOR
+//#define FILAMENT_RUNOUT_SENSOR                             // DIGA-Tech:
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
-  #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
+  #define FIL_RUNOUT_ENABLED_DEFAULT false // Enable the sensor on startup. Override with M412 followed by M500.       // DIGA-Tech:
   #define NUM_RUNOUT_SENSORS   1          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
 
   #define FIL_RUNOUT_STATE     LOW        // Pin state indicating that filament is NOT present.
@@ -1495,13 +1495,13 @@
   // After a runout is detected, continue printing this length of filament
   // before executing the runout script. Useful for a sensor at the end of
   // a feed tube. Requires 4 bytes SRAM per sensor, plus 4 bytes overhead.
-  //#define FILAMENT_RUNOUT_DISTANCE_MM 25
+  //#define FILAMENT_RUNOUT_DISTANCE_MM 10                   // DIGA-Tech:
 
   #ifdef FILAMENT_RUNOUT_DISTANCE_MM
     // Enable this option to use an encoder disc that toggles the runout pin
     // as the filament moves. (Be sure to set FILAMENT_RUNOUT_DISTANCE_MM
     // large enough to avoid false positives.)
-    //#define FILAMENT_MOTION_SENSOR
+    //#define FILAMENT_MOTION_SENSOR                         // DIGA-Tech:
   #endif
 #endif
 
@@ -1754,7 +1754,7 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { (20*60), (20*60), (4*60) }            // DIGA-Tech:
+#define HOMING_FEEDRATE_MM_M { (20*60), (20*60), (6*60) }            // DIGA-Tech:
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
@@ -2749,6 +2749,9 @@
 #define TFT_COLOR_UI                                       // DIGA-Tech:
 //#define TFT_LVGL_UI
 
+/* Biqu BX Dark Theme */
+#define COLOR_BACKGROUND    COLOR_DARK
+
 #if ENABLED(TFT_LVGL_UI)
   //#define MKS_WIFI_MODULE  // MKS WiFi module
 #endif
@@ -2761,7 +2764,7 @@
  *   TFT_ROTATE_270, TFT_ROTATE_270_MIRROR_X, TFT_ROTATE_270_MIRROR_Y,
  *   TFT_MIRROR_X, TFT_MIRROR_Y, TFT_NO_ROTATION
  */
-#define TFT_ROTATION TFT_NO_ROTATION                       // DIGA-Tech:
+//#define TFT_ROTATION TFT_NO_ROTATION
 
 //=============================================================================
 //============================  Other Controllers  ============================
@@ -2791,7 +2794,7 @@
 //
 // Touch Screen Settings
 //
-//#define TOUCH_SCREEN
+//#define TOUCH_SCREEN                                       // DIGA-Tech:
 #if ENABLED(TOUCH_SCREEN)
   #define BUTTON_DELAY_EDIT  50 // (ms) Button repeat delay for edit screens
   #define BUTTON_DELAY_MENU 250 // (ms) Button repeat delay for menus
@@ -2811,7 +2814,7 @@
   #endif
 
   #if ENABLED(TFT_COLOR_UI)
-    //#define SINGLE_TOUCH_NAVIGATION
+    #define SINGLE_TOUCH_NAVIGATION                        // DIGA-Tech:
   #endif
 #endif
 

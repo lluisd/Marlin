@@ -34,7 +34,7 @@
  * Verbose version identifier which should contain a reference to the location
  * from where the binary was downloaded or the source code was compiled.
  */
-#define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " - DIGA-Tech BIQU-BX v1.0" // DIGA-Tech:
+#define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " - DIGA-Tech BIQU BX v1.0" // DIGA-Tech:
 
 /**
  * The STRING_DISTRIBUTION_DATE represents when the binary file was built,
@@ -46,7 +46,7 @@
 /**
  * Defines a generic printer name to be output to the LCD after booting Marlin.
  */
-#define MACHINE_NAME "BIQU-BX"                                                 // DIGA-Tech:
+#define MACHINE_NAME "BIQU BX"                                                 // DIGA-Tech:
 
 /**
  * The SOURCE_CODE_URL is the location where users will find the Marlin Source
