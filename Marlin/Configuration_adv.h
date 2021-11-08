@@ -307,7 +307,7 @@
   /**
    * As described above, except for the bed (M140/M190/M303).
    */
-  #define WATCH_BED_TEMP_PERIOD                40 // Seconds         // DIGA-Tech:
+  #define WATCH_BED_TEMP_PERIOD                60 // Seconds
   #define WATCH_BED_TEMP_INCREASE               2 // Degrees Celsius
 #endif
 
@@ -316,12 +316,12 @@
  */
 #if ENABLED(THERMAL_PROTECTION_CHAMBER)
   #define THERMAL_PROTECTION_CHAMBER_PERIOD    20 // Seconds
-  #define THERMAL_PROTECTION_CHAMBER_HYSTERESIS 4 // Degrees Celsius // DIGA-Tech:
+  #define THERMAL_PROTECTION_CHAMBER_HYSTERESIS 2 // Degrees Celsius
 
   /**
    * Heated chamber watch settings (M141/M191).
    */
-  #define WATCH_CHAMBER_TEMP_PERIOD            40 // Seconds         // DIGA-Tech:
+  #define WATCH_CHAMBER_TEMP_PERIOD            60 // Seconds
   #define WATCH_CHAMBER_TEMP_INCREASE           2 // Degrees Celsius
 #endif
 
@@ -498,13 +498,14 @@
  */
 #define USE_CONTROLLER_FAN                                 // DIGA-Tech:
 #if ENABLED(USE_CONTROLLER_FAN)
-  #define CONTROLLER_FAN_PIN FAN1_PIN    // Set a custom pin for the controller fan      // DIGA-Tech:
-  //#define CONTROLLER_FAN_USE_Z_ONLY    // With this option only the Z axis is considered
-  //#define CONTROLLER_FAN_IGNORE_Z      // Ignore Z stepper. Useful when stepper timeout is disabled.
-  #define CONTROLLERFAN_SPEED_MIN      0 // (0-255) Minimum speed. (If set below this value the fan is turned off.)
-  #define CONTROLLERFAN_SPEED_ACTIVE 255 // (0-255) Active speed, used when any motor is enabled
-  #define CONTROLLERFAN_SPEED_IDLE     0 // (0-255) Idle speed, used when motors are disabled
-  #define CONTROLLERFAN_IDLE_TIME     60 // (seconds) Extra time to keep the fan running after disabling motors
+  #define CONTROLLER_FAN_PIN FAN1_PIN       // Set a custom pin for the controller fan   // DIGA-Tech:
+  //#define CONTROLLER_FAN_USE_Z_ONLY       // With this option only the Z axis is considered
+  //#define CONTROLLER_FAN_IGNORE_Z         // Ignore Z stepper. Useful when stepper timeout is disabled.
+  #define CONTROLLERFAN_SPEED_MIN         0 // (0-255) Minimum speed. (If set below this value the fan is turned off.)
+  #define CONTROLLERFAN_SPEED_ACTIVE    255 // (0-255) Active speed, used when any motor is enabled
+  #define CONTROLLERFAN_SPEED_IDLE        0 // (0-255) Idle speed, used when motors are disabled
+  #define CONTROLLERFAN_IDLE_TIME        60 // (seconds) Extra time to keep the fan running after disabling motors
+
   // Use TEMP_SENSOR_BOARD as a trigger for enabling the controller fan
   //#define CONTROLLER_FAN_MIN_BOARD_TEMP 40  // (°C) Turn on the fan if the board reaches this temperature
 
@@ -1384,19 +1385,19 @@
    */
   #define POWER_LOSS_RECOVERY                              // DIGA-Tech:
   #if ENABLED(POWER_LOSS_RECOVERY)
-    #define PLR_ENABLED_DEFAULT  true   // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)         // DIGA-Tech:
+    #define PLR_ENABLED_DEFAULT    true // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)         // DIGA-Tech:
     //#define BACKUP_POWER_SUPPLY       // Backup power / UPS to move the steppers on power loss                         // DIGA-Tech:
-    #define POWER_LOSS_ZRAISE      10   // (mm) Z axis raise on resume (on power loss with UPS)                        // DIGA-Tech:
+    #define POWER_LOSS_ZRAISE        10 // (mm) Z axis raise on resume (on power loss with UPS)                        // DIGA-Tech:
     //#define POWER_LOSS_PIN       PD11 // Pin to detect power loss. Set to -1 to disable default pin on boards without module.    // DIGA-Tech:
     //#define POWER_LOSS_STATE     HIGH // State of pin indicating power loss                                                      // DIGA-Tech:
     //#define POWER_LOSS_PULLUP         // Set pullup / pulldown as appropriate for your sensor                                    // DIGA-Tech:
     //#define POWER_LOSS_PULLDOWN
-    #define POWER_LOSS_PURGE_LEN   20   // (mm) Length of filament to purge on resume                                  // DIGA-Tech:
-    #define POWER_LOSS_RETRACT_LEN 10   // (mm) Length of filament to retract on fail. Requires backup power.          // DIGA-Tech:
+    #define POWER_LOSS_PURGE_LEN     20 // (mm) Length of filament to purge on resume                                  // DIGA-Tech:
+    #define POWER_LOSS_RETRACT_LEN   10 // (mm) Length of filament to retract on fail. Requires backup power.          // DIGA-Tech:
 
     // Without a POWER_LOSS_PIN the following option helps reduce wear on the SD card,
     // especially with "vase mode" printing. Set too high and vases cannot be continued.
-    #define POWER_LOSS_MIN_Z_CHANGE 0.1  // (mm) Minimum Z change before saving power-loss data                        // DIGA-Tech:
+    #define POWER_LOSS_MIN_Z_CHANGE  0.1 // (mm) Minimum Z change before saving power-loss data                        // DIGA-Tech:
 
     // Enable if Z homing is needed for proper recovery. 99.9% of the time this should be disabled!
     //#define POWER_LOSS_RECOVER_ZHOME
@@ -2122,7 +2123,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-//#define MINIMUM_STEPPER_PULSE 3                            // DIGA-Tech:
+//#define MINIMUM_STEPPER_PULSE 2
 
 /**
  * Maximum stepping rate (in Hz) the stepper driver allows
@@ -2136,7 +2137,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-//#define MAXIMUM_STEPPER_RATE 150000                        // DIGA-Tech:
+//#define MAXIMUM_STEPPER_RATE 250000
 
 // @section temperature
 
@@ -2979,7 +2980,7 @@
    * Beta feature!
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
-  #define SQUARE_WAVE_STEPPING                             // DIGA-Tech:
+  //#define SQUARE_WAVE_STEPPING                             // DIGA-Tech:
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.

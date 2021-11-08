@@ -601,9 +601,9 @@
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
     // BIQU BX                                             // DIGA-Tech:
-    #define DEFAULT_Kp 11.89                               // DIGA-Tech:
-    #define DEFAULT_Ki 0.40                                // DIGA-Tech:
-    #define DEFAULT_Kd 59.08                               // DIGA-Tech:
+    #define DEFAULT_Kp 10.12                               // DIGA-Tech:
+    #define DEFAULT_Ki 0.55                                // DIGA-Tech:
+    #define DEFAULT_Kd 46.14                               // DIGA-Tech:
 
     //#define DEFAULT_Kp  22.20                            // DIGA-Tech:
     //#define DEFAULT_Ki   1.08                            // DIGA-Tech:
@@ -645,9 +645,9 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   // BIQU BX                                               // DIGA-Tech:
-  #define DEFAULT_bedKp 127.83                             // DIGA-Tech:
-  #define DEFAULT_bedKi 20.75                              // DIGA-Tech:
-  #define DEFAULT_bedKd 525.0                              // DIGA-Tech:
+  #define DEFAULT_bedKp 121.74                             // DIGA-Tech:
+  #define DEFAULT_bedKi 23.77                              // DIGA-Tech:
+  #define DEFAULT_bedKd 415.57                             // DIGA-Tech:
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
@@ -706,7 +706,7 @@
   //#define PID_DEBUG             // Sends debug data to the serial port. Use 'M303 D' to toggle activation.
   //#define PID_OPENLOOP          // Puts PID in open loop. M104/M140 sets the output power from 0 to PID_MAX
   //#define SLOW_PWM_HEATERS      // PWM with very low frequency (roughly 0.125Hz=8s) and minimum state time of approximately 1s useful for heaters driven by a relay
-  #define PID_FUNCTIONAL_RANGE 25 // If the temperature difference between the target temperature and the actual temperature               // DIGA-Tech:
+  #define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 #endif
 
@@ -906,7 +906,7 @@
  *
  * :[2,3,4,5,6,7]
  */
-//#define ENDSTOP_NOISE_THRESHOLD 4                          // DIGA-Tech:
+//#define ENDSTOP_NOISE_THRESHOLD 2
 
 // Check for stuck or disconnected endstops during homing moves.
 //#define DETECT_BROKEN_ENDSTOP
@@ -1239,7 +1239,7 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-//#define MULTIPLE_PROBING 2
+#define MULTIPLE_PROBING 2                                 // DIGA-Tech:
 //#define EXTRA_PROBING    1
 
 /**
@@ -1256,9 +1256,9 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
+#define Z_CLEARANCE_DEPLOY_PROBE    5 // Z Clearance for Deploy/Stow           // DIGA-Tech:
+#define Z_CLEARANCE_BETWEEN_PROBES  2 // Z Clearance between probe points      // DIGA-Tech:
+#define Z_CLEARANCE_MULTI_PROBE     3 // Z Clearance between multiple probes   // DIGA-Tech:
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
 
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
@@ -1382,8 +1382,8 @@
 #define Y_BED_SIZE 250                                     // DIGA-Tech:
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -12                                      // DIGA-Tech:
-#define Y_MIN_POS -2                                       // DIGA-Tech:
+#define X_MIN_POS -13                                      // DIGA-Tech:
+#define Y_MIN_POS -7                                       // DIGA-Tech:
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
@@ -1445,7 +1445,7 @@
  */
 //#define FILAMENT_RUNOUT_SENSOR                             // DIGA-Tech:
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
-  #define FIL_RUNOUT_ENABLED_DEFAULT false // Enable the sensor on startup. Override with M412 followed by M500.       // DIGA-Tech:
+  #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.        // DIGA-Tech:
   #define NUM_RUNOUT_SENSORS   1          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
 
   #define FIL_RUNOUT_STATE     LOW        // Pin state indicating that filament is NOT present.
@@ -2750,7 +2750,7 @@
 //#define TFT_LVGL_UI
 
 /* Biqu BX Dark Theme */
-#define COLOR_BACKGROUND    COLOR_DARK
+#define COLOR_BACKGROUND    COLOR_DARK                     // DIGA-Tech:
 
 #if ENABLED(TFT_LVGL_UI)
   //#define MKS_WIFI_MODULE  // MKS WiFi module
@@ -2794,7 +2794,7 @@
 //
 // Touch Screen Settings
 //
-//#define TOUCH_SCREEN                                       // DIGA-Tech:
+#define TOUCH_SCREEN                                       // DIGA-Tech:
 #if ENABLED(TOUCH_SCREEN)
   #define BUTTON_DELAY_EDIT  50 // (ms) Button repeat delay for edit screens
   #define BUTTON_DELAY_MENU 250 // (ms) Button repeat delay for menus
