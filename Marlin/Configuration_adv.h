@@ -784,7 +784,7 @@
  * the position of the toolhead relative to the workspace.
  */
 
-#define SENSORLESS_BACKOFF_MM  { 3, 3, 0 }    // (mm) Backoff from endstops before sensorless homing         // DIGA-Tech:
+//#define SENSORLESS_BACKOFF_MM  { 3, 3, 0 }    // (mm) Backoff from endstops before sensorless homing         // DIGA-Tech:
 
 #define HOMING_BUMP_MM      { 0, 0, 2 }       // (mm) Backoff from endstops after first bump                 // DIGA-Tech:
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)
