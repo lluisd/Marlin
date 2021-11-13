@@ -123,8 +123,8 @@
  * Currently Ethernet (-2) is only supported on Teensy 4.1 boards.
  * :[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-//#define SERIAL_PORT_2 -1                                             // DIGA-Tech:
-//#define BAUDRATE_2 115200   // Enable to override BAUDRATE           // DIGA-Tech:
+#define SERIAL_PORT_2 -1                                             // DIGA-Tech:
+#define BAUDRATE_2 115200   // Enable to override BAUDRATE           // DIGA-Tech:
 
 /**
  * Select a third serial port on the board to use for communication with the host.
@@ -719,7 +719,7 @@
  *
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
-#define PREVENT_COLD_EXTRUSION                             // DIGA-Tech:
+//#define PREVENT_COLD_EXTRUSION                             // DIGA-Tech:
 #define EXTRUDE_MINTEMP 170
 
 /**
@@ -2749,7 +2749,7 @@
 #define TFT_COLOR_UI                                       // DIGA-Tech:
 //#define TFT_LVGL_UI
 
-/* Biqu BX Dark Theme */
+// Biqu BX Dark Theme
 #define COLOR_BACKGROUND    COLOR_DARK                     // DIGA-Tech:
 
 #if ENABLED(TFT_LVGL_UI)
