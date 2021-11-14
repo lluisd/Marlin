@@ -1380,8 +1380,8 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 305                                     // DIGA-Tech:
-#define Y_BED_SIZE 305                                     // DIGA-Tech:
+#define X_BED_SIZE 300                                     // DIGA-Tech:
+#define Y_BED_SIZE 300                                     // DIGA-Tech:
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS -3                                       // DIGA-Tech:
@@ -1838,7 +1838,7 @@
 #define EEPROM_CHITCHAT       // Give feedback on EEPROM commands. Disable to save PROGMEM.
 #define EEPROM_BOOT_SILENT    // Keep M503 quiet and only give errors during first load
 #if ENABLED(EEPROM_SETTINGS)
-  //#define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
+  #define EEPROM_AUTO_INIT    // Init EEPROM automatically on any errors.      // DIGA-Tech:
 #endif
 
 //
@@ -1893,7 +1893,7 @@
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
-  #define NOZZLE_PARK_POINT { (X_MIN_POS + 10), (Y_MAX_POS - 10), 20 }
+  #define NOZZLE_PARK_POINT { (X_MIN_POS), (Y_MIN_POS), 20 }         // DIGA-Tech:
   //#define NOZZLE_PARK_X_ONLY          // X move only is required to park
   //#define NOZZLE_PARK_Y_ONLY          // Y move only is required to park
   #define NOZZLE_PARK_Z_RAISE_MIN   2   // (mm) Always raise Z by at least this distance
