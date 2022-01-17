@@ -96,7 +96,7 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_RAMPS_14_EFB
+  #define MOTHERBOARD BOARD_BTT_SKR_SE_BX                  // DIGA-Tech:
 #endif
 
 /**
@@ -120,7 +120,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 250000                                    // DIGA-Tech:
+#define BAUDRATE 250000                                                        // DIGA-Tech:
 #define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate         // DIGA-Tech:
 
 /**
@@ -142,14 +142,6 @@
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
 
-<<<<<<< HEAD
-=======
-// Choose the name from boards.h that matches your setup
-#ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_BTT_SKR_SE_BX                  // DIGA-Tech:
-#endif
-
->>>>>>> eadb9ac2e6ca753c6be56f4bf3a648611cbeb10c
 // Name displayed in the LCD "Ready" message and Info menu
 #define CUSTOM_MACHINE_NAME "BIQU BX"                      // DIGA-Tech:
 
@@ -1854,12 +1846,8 @@
 #define EEPROM_CHITCHAT       // Give feedback on EEPROM commands. Disable to save PROGMEM.
 #define EEPROM_BOOT_SILENT    // Keep M503 quiet and only give errors during first load
 #if ENABLED(EEPROM_SETTINGS)
-<<<<<<< HEAD
-  //#define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
-  //#define EEPROM_INIT_NOW   // Init EEPROM on first boot after a new build.
-=======
   #define EEPROM_AUTO_INIT    // Init EEPROM automatically on any errors.      // DIGA-Tech:
->>>>>>> eadb9ac2e6ca753c6be56f4bf3a648611cbeb10c
+  #define EEPROM_INIT_NOW     // Init EEPROM on first boot after a new build.  // DIGA-Tech:
 #endif
 
 //

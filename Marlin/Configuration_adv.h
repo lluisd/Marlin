@@ -3958,14 +3958,9 @@
 #define HOST_ACTION_COMMANDS                               // DIGA-Tech:
 #if ENABLED(HOST_ACTION_COMMANDS)
   //#define HOST_PAUSE_M76
-<<<<<<< HEAD
-  //#define HOST_PROMPT_SUPPORT
+  #define HOST_PROMPT_SUPPORT                              // DIGA-Tech:
   //#define HOST_START_MENU_ITEM      // Add a menu item that tells the host to start
   //#define HOST_SHUTDOWN_MENU_ITEM   // Add a menu item that tells the host to shut down
-=======
-  #define HOST_PROMPT_SUPPORT                              // DIGA-Tech:
-  //#define HOST_START_MENU_ITEM  // Add a menu item that tells the host to start
->>>>>>> eadb9ac2e6ca753c6be56f4bf3a648611cbeb10c
 #endif
 
 /**
@@ -4314,7 +4309,7 @@
 //
 // M43 - display pin status, toggle pins, watch pins, watch endstops & toggle LED, test servo probe
 //
-//#define PINS_DEBUGGING
+//#define PINS_DEBUGGING                                     // DIGA-Tech:
 
 // Enable Marlin dev mode which adds some special commands
 //#define MARLIN_DEV_MODE
