@@ -915,7 +915,11 @@
    *
    * Set the default state here, change with 'M401 S' or UI, use M500 to save, M502 to reset.
    */
+<<<<<<< HEAD
   #define BLTOUCH_HS_MODE true                             // DIGA-Tech:
+=======
+  #define BLTOUCH_HS_MODE                                  // DIGA-Tech:
+>>>>>>> 3dac3ebcee31456395ec26662c68917e15de98d2
 
   // Safety: Enable voltage mode settings in the LCD menu.
   //#define BLTOUCH_LCD_VOLTAGE_MENU
@@ -3959,8 +3963,12 @@
 #if ENABLED(HOST_ACTION_COMMANDS)
   //#define HOST_PAUSE_M76
   #define HOST_PROMPT_SUPPORT                              // DIGA-Tech:
+<<<<<<< HEAD
   //#define HOST_START_MENU_ITEM      // Add a menu item that tells the host to start
   //#define HOST_SHUTDOWN_MENU_ITEM   // Add a menu item that tells the host to shut down
+=======
+  //#define HOST_START_MENU_ITEM  // Add a menu item that tells the host to start
+>>>>>>> 3dac3ebcee31456395ec26662c68917e15de98d2
 #endif
 
 /**
