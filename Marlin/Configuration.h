@@ -142,14 +142,6 @@
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
 
-<<<<<<< HEAD
-=======
-// Choose the name from boards.h that matches your setup
-#ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_MKS_GEN_L                      // DIGA-Tech:
-#endif
-
->>>>>>> 3dac3ebcee31456395ec26662c68917e15de98d2
 // Name displayed in the LCD "Ready" message and Info menu
 #define CUSTOM_MACHINE_NAME "Artillery Sidewinder X1"      // DIGA-Tech:
 
@@ -1857,10 +1849,7 @@
 #define EEPROM_BOOT_SILENT    // Keep M503 quiet and only give errors during first load
 #if ENABLED(EEPROM_SETTINGS)
   #define EEPROM_AUTO_INIT    // Init EEPROM automatically on any errors.      // DIGA-Tech:
-<<<<<<< HEAD
-  //#define EEPROM_INIT_NOW   // Init EEPROM on first boot after a new build.
-=======
->>>>>>> 3dac3ebcee31456395ec26662c68917e15de98d2
+  #define EEPROM_INIT_NOW     // Init EEPROM on first boot after a new build.  // DIGA-Tech:
 #endif
 
 //
