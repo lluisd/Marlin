@@ -1375,40 +1375,6 @@
     #endif
   #endif
 
-<<<<<<< HEAD
-=======
-  // Insert a menu for preheating at the top level to allow for quick access
-  //#define PREHEAT_SHORTCUT_MENU_ITEM
-
-#endif // HAS_LCD_MENU
-
-#if ANY(HAS_DISPLAY, DWIN_CREALITY_LCD_ENHANCED, DWIN_CREALITY_LCD_JYERSUI)
-  //#define SOUND_MENU_ITEM   // Add a mute option to the LCD menu
-#endif
-
-#if EITHER(HAS_DISPLAY, DWIN_CREALITY_LCD_ENHANCED)
-  // The timeout (in ms) to return to the status screen from sub-menus
-  //#define LCD_TIMEOUT_TO_STATUS 15000
-
-  #if ENABLED(SHOW_BOOTSCREEN)
-    #define BOOTSCREEN_TIMEOUT 4000      // (ms) Total Duration to display the boot screen(s)
-    #if EITHER(HAS_MARLINUI_U8GLIB, TFT_COLOR_UI)
-      #define BOOT_MARLIN_LOGO_SMALL     // Show a smaller Marlin logo on the Boot Screen (saving lots of flash)
-    #endif
-  #endif
-
-  // Scroll a longer status message into view
-  //#define STATUS_MESSAGE_SCROLLING
-
-  // On the Info Screen, display XY with one decimal place when possible
-  //#define LCD_DECIMAL_SMALL_XY
-
-  // Add an 'M73' G-code to set the current percentage
-  #define LCD_SET_PROGRESS_MANUALLY                        // DIGA-Tech:
-
-  // Show the E position (filament used) during printing
-  //#define LCD_SHOW_E_TOTAL
->>>>>>> 8e2a84172b2bf0327d530712e2918d13429aa3fe
 #endif
 
 // LCD Print Progress options
@@ -1555,13 +1521,8 @@
   // LCD's font must contain the characters. Check your selected LCD language.
   //#define UTF_FILENAME_SUPPORT
 
-<<<<<<< HEAD
-  //#define LONG_FILENAME_HOST_SUPPORT    // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'
-  //#define LONG_FILENAME_WRITE_SUPPORT   // Create / delete files with long filenames via M28, M30, and Binary Transfer Protocol
-=======
-  // This allows hosts to request long names for files and folders with M33
-  #define LONG_FILENAME_HOST_SUPPORT                       // DIGA-Tech:
->>>>>>> 8e2a84172b2bf0327d530712e2918d13429aa3fe
+  #define LONG_FILENAME_HOST_SUPPORT      // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'        // DIGA-Tech:
+  #define LONG_FILENAME_WRITE_SUPPORT     // Create / delete files with long filenames via M28, M30, and Binary Transfer Protocol                    // DIGA-Tech:
 
   //#define SCROLL_LONG_FILENAMES         // Scroll long filenames in the SD card menu
 
@@ -1576,14 +1537,7 @@
 
   //#define SD_REPRINT_LAST_SELECTED_FILE // On print completion open the LCD Menu and select the same file
 
-<<<<<<< HEAD
-  //#define AUTO_REPORT_SD_STATUS         // Auto-report media status with 'M27 S<seconds>'
-=======
-  /**
-   * Auto-report SdCard status with M27 S<seconds>
-   */
-  #define AUTO_REPORT_SD_STATUS                            // DIGA-Tech:
->>>>>>> 8e2a84172b2bf0327d530712e2918d13429aa3fe
+  #define AUTO_REPORT_SD_STATUS           // Auto-report media status with 'M27 S<seconds>'        // DIGA-Tech:
 
   /**
    * Support for USB thumb drives using an Arduino USB Host Shield or
@@ -4014,20 +3968,13 @@
  */
 #define HOST_ACTION_COMMANDS                               // DIGA-Tech:
 #if ENABLED(HOST_ACTION_COMMANDS)
-<<<<<<< HEAD
   //#define HOST_PAUSE_M76                // Tell the host to pause in response to M76
-  //#define HOST_PROMPT_SUPPORT           // Initiate host prompts to get user feedback
+  #define HOST_PROMPT_SUPPORT             // Initiate host prompts to get user feedback            // DIGA-Tech:
   #if ENABLED(HOST_PROMPT_SUPPORT)
     //#define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications
   #endif
   //#define HOST_START_MENU_ITEM          // Add a menu item that tells the host to start
   //#define HOST_SHUTDOWN_MENU_ITEM       // Add a menu item that tells the host to shut down
-=======
-  //#define HOST_PAUSE_M76
-  #define HOST_PROMPT_SUPPORT                              // DIGA-Tech:
-  //#define HOST_START_MENU_ITEM      // Add a menu item that tells the host to start
-  //#define HOST_SHUTDOWN_MENU_ITEM   // Add a menu item that tells the host to shut down
->>>>>>> 8e2a84172b2bf0327d530712e2918d13429aa3fe
 #endif
 
 /**
