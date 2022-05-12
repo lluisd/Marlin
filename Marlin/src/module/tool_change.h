@@ -50,7 +50,7 @@
   #endif
 
   #if ENABLED(TOOLCHANGE_FS_INIT_BEFORE_SWAP)
-    extern Flags<EXTRUDERS> toolchange_extruder_ready;
+    extern bool toolchange_extruder_ready[EXTRUDERS];
   #endif
 
   #if ENABLED(TOOLCHANGE_MIGRATION_FEATURE)
