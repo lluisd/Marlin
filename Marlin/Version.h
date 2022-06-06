@@ -28,25 +28,33 @@
 /**
  * Marlin release version identifier
  */
+<<<<<<< HEAD
 //#define SHORT_BUILD_VERSION "2.1"
+=======
+//#define SHORT_BUILD_VERSION "2.0.9.3"                                        // DIGA-Tech:
+>>>>>>> b7d82453f03f2e4a1c7b83e4c651e08cf37b4ace
 
 /**
  * Verbose version identifier which should contain a reference to the location
  * from where the binary was downloaded or the source code was compiled.
  */
-//#define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION
+#define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " - DIGA-Tech BIQU BX v1.0" // DIGA-Tech:
 
 /**
  * The STRING_DISTRIBUTION_DATE represents when the binary file was built,
  * here we define this default string as the date where the latest release
  * version was tagged.
  */
+<<<<<<< HEAD
 //#define STRING_DISTRIBUTION_DATE "2022-06-04"
+=======
+//#define STRING_DISTRIBUTION_DATE "2021-12-25"                                // DIGA-Tech:
+>>>>>>> b7d82453f03f2e4a1c7b83e4c651e08cf37b4ace
 
 /**
  * Defines a generic printer name to be output to the LCD after booting Marlin.
  */
-//#define MACHINE_NAME "3D Printer"
+#define MACHINE_NAME "BIQU BX"                                                 // DIGA-Tech:
 
 /**
  * The SOURCE_CODE_URL is the location where users will find the Marlin Source
