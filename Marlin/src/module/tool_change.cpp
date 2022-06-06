@@ -46,7 +46,7 @@
 #endif
 
 #if ENABLED(TOOLCHANGE_FS_INIT_BEFORE_SWAP)
-  bool toolchange_extruder_ready[EXTRUDERS];
+  Flags<EXTRUDERS> toolchange_extruder_ready;
 #endif
 
 #if EITHER(MAGNETIC_PARKING_EXTRUDER, TOOL_SENSOR) \
@@ -1166,12 +1166,7 @@ void tool_change(const uint8_t new_tool, bool no_move/*=false*/) {
     #if ENABLED(TOOLCHANGE_FS_PRIME_FIRST_USED)
       if (enable_first_prime && old_tool == 0 && new_tool == 0 && !extruder_was_primed[0]) {
         tool_change_prime();
-<<<<<<< HEAD
         TERN_(TOOLCHANGE_FS_INIT_BEFORE_SWAP, toolchange_extruder_ready.set(old_tool)); // Primed and initialized
-=======
-        first_tool_is_primed = true;
-        TERN_(TOOLCHANGE_FS_INIT_BEFORE_SWAP, toolchange_extruder_ready[old_tool] = true); // Primed and initialized
->>>>>>> b7d82453f03f2e4a1c7b83e4c651e08cf37b4ace
       }
     #endif
 
@@ -1321,41 +1316,8 @@ void tool_change(const uint8_t new_tool, bool no_move/*=false*/) {
         #endif
 
         #if ENABLED(TOOLCHANGE_FILAMENT_SWAP)
-<<<<<<< HEAD
           if (should_swap && !too_cold(active_extruder))
             extruder_prime(); // Prime selected Extruder
-=======
-          if (should_swap && !too_cold) {
-
-            float fr = toolchange_settings.unretract_speed;
-
-            #if ENABLED(TOOLCHANGE_FS_INIT_BEFORE_SWAP)
-              if (!toolchange_extruder_ready[new_tool]) {
-                toolchange_extruder_ready[new_tool] = true;
-                fr = toolchange_settings.prime_speed;       // Next move is a prime
-                unscaled_e_move(0, MMM_TO_MMS(fr));         // Init planner with 0 length move
-              }
-            #endif
-
-            // Unretract (or Prime)
-            unscaled_e_move(toolchange_settings.swap_length, MMM_TO_MMS(fr));
-
-            // Extra Prime
-            unscaled_e_move(toolchange_settings.extra_prime, MMM_TO_MMS(toolchange_settings.prime_speed));
-
-            // Cutting retraction
-            #if TOOLCHANGE_FS_WIPE_RETRACT
-              unscaled_e_move(-(TOOLCHANGE_FS_WIPE_RETRACT), MMM_TO_MMS(toolchange_settings.retract_speed));
-            #endif
-
-            // Cool down with fan
-            #if HAS_FAN && TOOLCHANGE_FS_FAN >= 0
-              thermalManager.fan_speed[TOOLCHANGE_FS_FAN] = toolchange_settings.fan_speed;
-              gcode.dwell(SEC_TO_MS(toolchange_settings.fan_time));
-              thermalManager.fan_speed[TOOLCHANGE_FS_FAN] = 0;
-            #endif
-          }
->>>>>>> b7d82453f03f2e4a1c7b83e4c651e08cf37b4ace
         #endif
 
         // Prevent a move outside physical bounds
@@ -1514,7 +1476,7 @@ void tool_change(const uint8_t new_tool, bool no_move/*=false*/) {
 
     // Migrate the retracted state
     #if ENABLED(FWRETRACT)
-      fwretract.retracted[migration_extruder] = fwretract.retracted[active_extruder];
+      fwretract.retracted.set(migration_extruder, fwretract.retracted[active_extruder]);
     #endif
 
     // Migrate the temperature to the new hotend
