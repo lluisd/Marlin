@@ -28,11 +28,7 @@
 /**
  * Marlin release version identifier
  */
-<<<<<<< HEAD
-//#define SHORT_BUILD_VERSION "2.1"
-=======
-//#define SHORT_BUILD_VERSION "2.0.9.3"                                        // DIGA-Tech:
->>>>>>> 3980a87c2f1c90872ade2603e24ba2987914c0e5
+//#define SHORT_BUILD_VERSION "2.1"                                            // DIGA-Tech:
 
 /**
  * Verbose version identifier which should contain a reference to the location
@@ -45,11 +41,7 @@
  * here we define this default string as the date where the latest release
  * version was tagged.
  */
-<<<<<<< HEAD
-//#define STRING_DISTRIBUTION_DATE "2022-06-04"
-=======
-//#define STRING_DISTRIBUTION_DATE "2021-12-25"                                // DIGA-Tech:
->>>>>>> 3980a87c2f1c90872ade2603e24ba2987914c0e5
+//#define STRING_DISTRIBUTION_DATE "2022-06-04"                                // DIGA-Tech:
 
 /**
  * Defines a generic printer name to be output to the LCD after booting Marlin.
