@@ -153,7 +153,7 @@ Stepper stepper; // Singleton
   #endif
 #endif
 
-stepper_flags_t Stepper::axis_enabled; // {0}
+axis_flags_t Stepper::axis_enabled; // {0}
 
 // private:
 
