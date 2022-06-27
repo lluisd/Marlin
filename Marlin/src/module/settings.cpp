@@ -178,12 +178,18 @@
 #endif
 
 #define _EN_ITEM(N) , E##N
-#define _EN1_ITEM(N) , E##N:1
 
+<<<<<<< HEAD
 typedef struct { uint16_t MAIN_AXIS_NAMES, X2, Y2, Z2, Z3, Z4 REPEAT(E_STEPPERS, _EN_ITEM); } per_stepper_uint16_t;
 typedef struct { uint32_t MAIN_AXIS_NAMES, X2, Y2, Z2, Z3, Z4 REPEAT(E_STEPPERS, _EN_ITEM); } per_stepper_uint32_t;
 typedef struct {  int16_t MAIN_AXIS_NAMES, X2, Y2, Z2, Z3, Z4;                              } mot_stepper_int16_t;
 typedef struct {     bool NUM_AXIS_LIST(X:1, Y:1, Z:1, I:1, J:1, K:1, U:1, V:1, W:1), X2:1, Y2:1, Z2:1, Z3:1, Z4:1 REPEAT(E_STEPPERS, _EN1_ITEM); } per_stepper_bool_t;
+=======
+typedef struct { uint16_t LINEAR_AXIS_LIST(X, Y, Z, I, J, K), X2, Y2, Z2, Z3, Z4 REPEAT(E_STEPPERS, _EN_ITEM); } tmc_stepper_current_t;
+typedef struct { uint32_t LINEAR_AXIS_LIST(X, Y, Z, I, J, K), X2, Y2, Z2, Z3, Z4 REPEAT(E_STEPPERS, _EN_ITEM); } tmc_hybrid_threshold_t;
+typedef struct {  int16_t LINEAR_AXIS_LIST(X, Y, Z, I, J, K), X2, Y2, Z2, Z3, Z4;                              } tmc_sgt_t;
+typedef struct {     bool LINEAR_AXIS_LIST(X, Y, Z, I, J, K), X2, Y2, Z2, Z3, Z4 REPEAT(E_STEPPERS, _EN_ITEM); } tmc_stealth_enabled_t;
+>>>>>>> a30232ba407f7830aa2fe6c088eeb2197e735268
 
 #undef _EN_ITEM
 
@@ -433,10 +439,10 @@ typedef struct SettingsDataStruct {
   //
   // HAS_TRINAMIC_CONFIG
   //
-  per_stepper_uint16_t tmc_stepper_current;             // M906 X Y Z...
-  per_stepper_uint32_t tmc_hybrid_threshold;            // M913 X Y Z...
-  mot_stepper_int16_t tmc_sgt;                          // M914 X Y Z...
-  per_stepper_bool_t tmc_stealth_enabled;               // M569 X Y Z...
+  tmc_stepper_current_t tmc_stepper_current;            // M906 X Y Z...
+  tmc_hybrid_threshold_t tmc_hybrid_threshold;          // M913 X Y Z...
+  tmc_sgt_t tmc_sgt;                                    // M914 X Y Z...
+  tmc_stealth_enabled_t tmc_stealth_enabled;            // M569 X Y Z...
 
   //
   // LIN_ADVANCE
@@ -1235,7 +1241,7 @@ void MarlinSettings::postprocess() {
     {
       _FIELD_TEST(tmc_stepper_current);
 
-      per_stepper_uint16_t tmc_stepper_current{0};
+      tmc_stepper_current_t tmc_stepper_current{0};
 
       #if HAS_TRINAMIC_CONFIG
         #if AXIS_IS_TMC(X)
@@ -1315,7 +1321,7 @@ void MarlinSettings::postprocess() {
       _FIELD_TEST(tmc_hybrid_threshold);
 
       #if ENABLED(HYBRID_THRESHOLD)
-        per_stepper_uint32_t tmc_hybrid_threshold{0};
+        tmc_hybrid_threshold_t tmc_hybrid_threshold{0};
         TERN_(X_HAS_STEALTHCHOP,  tmc_hybrid_threshold.X =  stepperX.get_pwm_thrs());
         TERN_(Y_HAS_STEALTHCHOP,  tmc_hybrid_threshold.Y =  stepperY.get_pwm_thrs());
         TERN_(Z_HAS_STEALTHCHOP,  tmc_hybrid_threshold.Z =  stepperZ.get_pwm_thrs());
@@ -1340,8 +1346,13 @@ void MarlinSettings::postprocess() {
         TERN_(E7_HAS_STEALTHCHOP, tmc_hybrid_threshold.E7 = stepperE7.get_pwm_thrs());
       #else
         #define _EN_ITEM(N) , .E##N =  30
+<<<<<<< HEAD
         const per_stepper_uint32_t tmc_hybrid_threshold = {
           NUM_AXIS_LIST(.X = 100, .Y = 100, .Z = 3, .I = 3, .J = 3, .K = 3, .U = 3, .V = 3, .W = 3),
+=======
+        const tmc_hybrid_threshold_t tmc_hybrid_threshold = {
+          LINEAR_AXIS_LIST(.X = 100, .Y = 100, .Z = 3, .I = 3, .J = 3, .K = 3),
+>>>>>>> a30232ba407f7830aa2fe6c088eeb2197e735268
           .X2 = 100, .Y2 = 100, .Z2 = 3, .Z3 = 3, .Z4 = 3
           REPEAT(E_STEPPERS, _EN_ITEM)
         };
@@ -1354,7 +1365,7 @@ void MarlinSettings::postprocess() {
     // TMC StallGuard threshold
     //
     {
-      mot_stepper_int16_t tmc_sgt{0};
+      tmc_sgt_t tmc_sgt{0};
       #if USE_SENSORLESS
         NUM_AXIS_CODE(
           TERN_(X_SENSORLESS, tmc_sgt.X = stepperX.homing_threshold()),
@@ -1382,7 +1393,7 @@ void MarlinSettings::postprocess() {
     {
       _FIELD_TEST(tmc_stealth_enabled);
 
-      per_stepper_bool_t tmc_stealth_enabled = { false };
+      tmc_stealth_enabled_t tmc_stealth_enabled = { false };
       TERN_(X_HAS_STEALTHCHOP,  tmc_stealth_enabled.X  = stepperX.get_stored_stealthChop());
       TERN_(Y_HAS_STEALTHCHOP,  tmc_stealth_enabled.Y  = stepperY.get_stored_stealthChop());
       TERN_(Z_HAS_STEALTHCHOP,  tmc_stealth_enabled.Z  = stepperZ.get_stored_stealthChop());
@@ -2185,7 +2196,7 @@ void MarlinSettings::postprocess() {
       {
         _FIELD_TEST(tmc_stepper_current);
 
-        per_stepper_uint16_t currents;
+        tmc_stepper_current_t currents;
         EEPROM_READ(currents);
 
         #if HAS_TRINAMIC_CONFIG
@@ -2264,7 +2275,7 @@ void MarlinSettings::postprocess() {
 
       // TMC Hybrid Threshold
       {
-        per_stepper_uint32_t tmc_hybrid_threshold;
+        tmc_hybrid_threshold_t tmc_hybrid_threshold;
         _FIELD_TEST(tmc_hybrid_threshold);
         EEPROM_READ(tmc_hybrid_threshold);
 
@@ -2300,7 +2311,7 @@ void MarlinSettings::postprocess() {
       // TMC StallGuard threshold.
       //
       {
-        mot_stepper_int16_t tmc_sgt;
+        tmc_sgt_t tmc_sgt;
         _FIELD_TEST(tmc_sgt);
         EEPROM_READ(tmc_sgt);
         #if USE_SENSORLESS
@@ -2329,7 +2340,7 @@ void MarlinSettings::postprocess() {
       {
         _FIELD_TEST(tmc_stealth_enabled);
 
-        per_stepper_bool_t tmc_stealth_enabled;
+        tmc_stealth_enabled_t tmc_stealth_enabled;
         EEPROM_READ(tmc_stealth_enabled);
 
         #if HAS_TRINAMIC_CONFIG
