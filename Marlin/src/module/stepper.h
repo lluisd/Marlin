@@ -263,13 +263,7 @@ typedef struct {
       #endif
     };
   };
-<<<<<<< HEAD
 } stepper_flags_t;
-=======
-  constexpr ena_mask_t linear_bits() { return _BV(LINEAR_AXES) - 1; }
-  constexpr ena_mask_t e_bits() { return (_BV(EXTRUDERS) - 1) << LINEAR_AXES; }
-} axis_flags_t;
->>>>>>> e4e91fb9085f9dc5627e56269efa3cb54f4f2ee1
 
 // All the stepper enable pins
 constexpr pin_t ena_pins[] = {
@@ -604,7 +598,7 @@ class Stepper {
       static void refresh_motor_power();
     #endif
 
-    static axis_flags_t axis_enabled;   // Axis stepper(s) ENABLED states
+    static stepper_flags_t axis_enabled;  // Axis stepper(s) ENABLED states
 
     static bool axis_is_enabled(const AxisEnum axis E_OPTARG(const uint8_t eindex=0)) {
       return TEST(axis_enabled.bits, INDEX_OF_AXIS(axis, eindex));
