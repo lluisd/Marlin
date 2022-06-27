@@ -84,7 +84,6 @@ struct IF<true, L, R> { typedef L type; };
 
 #define AXIS_COLLISION(L) (AXIS4_NAME == L || AXIS5_NAME == L || AXIS6_NAME == L || AXIS7_NAME == L || AXIS8_NAME == L || AXIS9_NAME == L)
 
-<<<<<<< HEAD
 // General Flags for some number of states
 template<size_t N>
 struct Flags {
@@ -138,8 +137,6 @@ typedef struct AxisFlags {
   int size() const                         { return sizeof(flags); }
 } axis_flags_t;
 
-=======
->>>>>>> cf09302696523ba56161980cd05c095b9b5647aa
 //
 // Enumerated axis indices
 //
