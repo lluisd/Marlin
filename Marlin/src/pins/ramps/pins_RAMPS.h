@@ -645,11 +645,22 @@
         #define DOGLCD_MOSI          EXP1_03_PIN
         #define DOGLCD_SCK           EXP1_05_PIN
       #else
+<<<<<<< HEAD
         #define LCD_PINS_RS          EXP1_04_PIN
         #define LCD_PINS_ENABLE      EXP1_03_PIN
         #define LCD_PINS_D4          EXP1_05_PIN
         #define LCD_PINS_D5          EXP1_06_PIN
         #define LCD_PINS_D6          EXP1_07_PIN
+=======
+//        #define LCD_PINS_RS          EXP1_07_PIN         // DIGA-Tech:
+        #define LCD_PINS_RS          EXP1_04_PIN           // DIGA-Tech:
+        #define LCD_PINS_ENABLE      EXP1_08_PIN
+        #define LCD_PINS_D4          EXP1_06_PIN
+//        #define LCD_PINS_D5          EXP1_05_PIN         // DIGA-Tech:
+//        #define LCD_PINS_D6          EXP1_04_PIN         // DIGA-Tech:
+        #define LCD_PINS_D5          EXP2_08_PIN           // DIGA-Tech:
+        #define LCD_PINS_D6          EXP2_06_PIN           // DIGA-Tech:
+>>>>>>> e57b46c1d9b9d25b69ce04975a105c36596910c9
       #endif
 
       #define LCD_PINS_D7            EXP1_08_PIN
@@ -688,13 +699,25 @@
         #define BTN_EN1              EXP1_03_PIN
         #define BTN_EN2              EXP1_05_PIN
       #else
+<<<<<<< HEAD
         #define BTN_EN1              EXP2_03_PIN
         #define BTN_EN2              EXP2_05_PIN
+=======
+//        #define BTN_EN1              EXP2_08_PIN         // DIGA-Tech:
+//        #define BTN_EN2              EXP2_06_PIN         // DIGA-Tech:
+        #define BTN_EN1              EXP1_07_PIN           // DIGA-Tech:
+        #define BTN_EN2              EXP1_05_PIN           // DIGA-Tech:
+>>>>>>> e57b46c1d9b9d25b69ce04975a105c36596910c9
       #endif
 
       #define BTN_ENC                EXP1_02_PIN
       #ifndef SD_DETECT_PIN
+<<<<<<< HEAD
         #define SD_DETECT_PIN        EXP2_07_PIN
+=======
+//        #define SD_DETECT_PIN        EXP2_04_PIN         // DIGA-Tech:
+        #define SD_DETECT_PIN        -1                    // DIGA-Tech:
+>>>>>>> e57b46c1d9b9d25b69ce04975a105c36596910c9
       #endif
       #ifndef KILL_PIN
         #define KILL_PIN             EXP2_08_PIN
