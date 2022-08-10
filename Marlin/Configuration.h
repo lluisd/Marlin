@@ -87,7 +87,7 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_BTT_SKR_SE_BX                  // DIGA-Tech:
+  #define MOTHERBOARD BOARD_BTT_SKR_SE_BX_V2               // DIGA-Tech:
 #endif
 
 /**
