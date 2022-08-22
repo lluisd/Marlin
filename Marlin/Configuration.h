@@ -135,7 +135,7 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Artillery Sidewinder X1"      // DIGA-Tech:
+#define CUSTOM_MACHINE_NAME "Artillery Genius"      // DIGA-Tech:
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -1487,7 +1487,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 }              // DIGA-Tech: probe offset
+#define NOZZLE_TO_PROBE_OFFSET { 33, -33, 0 }              // DIGA-Tech: probe offset
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1698,8 +1698,8 @@
 // @section geometry
 
 // The size of the printable area
-#define X_BED_SIZE 300                                     // DIGA-Tech:
-#define Y_BED_SIZE 300                                     // DIGA-Tech:
+#define X_BED_SIZE 220                                     // DIGA-Tech:
+#define Y_BED_SIZE 220                                     // DIGA-Tech:
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS -3                                       // DIGA-Tech:
@@ -1707,7 +1707,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 400                                      // DIGA-Tech:
+#define Z_MAX_POS 250                                      // DIGA-Tech:
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
@@ -2460,7 +2460,7 @@
  * SD Card support is disabled by default. If your controller has an SD slot,
  * you must uncomment the following option or it won't work.
  */
-//#define SDSUPPORT                                          // DIGA-Tech:
+#define SDSUPPORT                                          // DIGA-Tech:
 
 /**
  * SD CARD: ENABLE CRC
